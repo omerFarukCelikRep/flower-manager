@@ -1,0 +1,21 @@
+{
+  "users": [
+    {
+      "firstName": "İsim",
+      "lastName": "Soyisim",
+      "email": "email@email.com",
+      "password": "şifre",
+      "username": "kullanıcı adı",
+      "dateOfBirth": "01-01-2021"
+    }
+  ],
+  "flowers": [
+    {
+      "name": "Flower name",
+      "family": "Çiçek tip",
+      "image":"Resim",
+      "stockCount":"Stok Adedi",
+      "price":"Fiyat"
+    }
+  ]
+}
