@@ -2,37 +2,78 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+
+/* footer alanı start */
+.text-light {
+  color: white;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.footer {
+  background-color: #872361;
+  margin-top: 300px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.footer-logo-part {
+  display: flex;
+  align-items: center;
+  position: relative;
+  margin-bottom: 50px;
+}
+
+.footer-logo {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  margin-top: 100px;
+  margin-left: 160px;
+  margin-right: 100px;
 }
 
-.App-link {
-  color: #61dafb;
+.footer-text {
+  position: relative;
+  margin-top: 100px;
+  width: 400px;
+  font-size: 14px;
+  line-height:30px;
+}
+.footer-texts ul {
+  list-style: none;
+  display: flex;
+  
+}
+.footer-texts ul li {
+  margin-left: 30px;
+  font-size: 18px;
+}
+.footer-contact {
+  position: relative;
+  margin-left: 250px;
+  width: 500px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.footer-contact h5 {
+  padding-top: 50px;
+  font-size: 18px;
 }
+
+.footer-texts {
+  position: relative;
+  margin-top: 50px;
+  padding-bottom: 60px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.copy-right-text {
+  display: flex;
+  font-size: 18px;
+  margin-right: 30px;
+}
+
+.copy-right-text h5 {
+  margin-right: 5px;
+}
+
+/* footer alanı end */
