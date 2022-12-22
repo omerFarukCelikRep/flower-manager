@@ -1,10 +1,12 @@
-import './App.css';
-import { Footer } from './components/Footer/Footer';
+import "./App.css";
+import Footer from "./components/shared/footer/Footer";
 
 function App() {
-  return ( <>
-  <Footer/>
-  </>);
+  return (
+    <>
+      <Footer />
+    </>
+  );
 }
 
 export default App;
