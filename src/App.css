@@ -1,5 +1,7 @@
 .App {
   text-align: center;
+  padding: 0;
+  margin: 0;
 }
 
 
@@ -77,3 +79,22 @@
 }
 
 /* footer alanı end */
+
+/* NotFound page start */
+
+.not-found {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+}
+.not-found h1 {
+  font-size: 200px;
+  color: rgb(43, 43, 43);
+}
+.not-found h5 {
+  font-size: 18px;
+  color: rgb(43, 43, 43);
+}
