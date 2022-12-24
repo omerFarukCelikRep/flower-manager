@@ -1,6 +1,7 @@
 import React, { useState } from "react";
+import { getAsync } from "../../../../services/base/ApiService";
 
-const Register = () => {
+const Register = (/*{register}*/) => {
   const [registerUser, setRegisterUser] = useState({
     firstName: "",
     lastName: "",
@@ -10,6 +11,17 @@ const Register = () => {
     password: "",
     confirmedPassword: "",
   });
+  const [isValid, setIsValid] = useState({
+    firstName: false,
+    lastName: false,
+    email: false,
+    username: false,
+    dateOfBirth: false,
+    password: false,
+    confirmedPassword: false,
+  })
+  //register(registerUser);
+
 
   return (
     <>
