@@ -1,16 +1,17 @@
 import "./App.css";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import Footer from "./components/shared/footer/Footer";
-import { NotFound } from "./components/shared/not-Found/NotFound";
+import NotFound from "./components/shared/not-Found/NotFound";
+import Register from "./pages/register/Register";
 
 function App() {
   return (
-    <Router>
-      <Routes>
-        <Route exact path="/" element={<Footer />}></Route>
-        <Route exact path="*" element={<NotFound />}></Route>
-      </Routes>
-    </Router>
+    <Routes>
+      <Route path="/" element={<Footer />}>
+        <Route path="register" element={<Register />} />
+      </Route>
+      <Route exact path="*" element={<NotFound />} />
+    </Routes>
   );
 }
 
