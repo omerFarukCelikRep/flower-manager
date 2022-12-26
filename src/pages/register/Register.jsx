@@ -1,9 +1,5 @@
 import React, { useEffect, useState } from "react";
 
-const EMAIL_REGEX = /^\S+@\S+\.\S+$/;
-const PASSWORD_REGEX =
-  /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%]).{8,24}$/;
-
 const Register = (/*{register}*/) => {
   const [registerUser, setRegisterUser] = useState({
     firstName: "",
@@ -14,6 +10,7 @@ const Register = (/*{register}*/) => {
     password: "",
     confirmedPassword: "",
   });
+
   const [isValid, setIsValid] = useState({
     firstName: false,
     lastName: false,
