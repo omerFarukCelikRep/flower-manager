@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
+import StringHelper from "../../helpers/StringHelper";
 
 const Register = () => {
   const [registerUser, setRegisterUser] = useState({
@@ -35,15 +36,19 @@ const Register = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    console.log(registerUser);
   };
 
   return (
     <>
       <form className="register-form" onSubmit={handleSubmit}>
         <div className="form-group">
-          <label htmlFor="firstName"></label>
+          <label htmlFor="firstName">
+            First Name
+          </label>
           <input
             type="text"
+            value={registerUser.firstName}
             onChange={(event) =>
               setRegisterUser((prevUser) => ({
                 ...prevUser,
@@ -54,9 +59,12 @@ const Register = () => {
           <span></span>
         </div>
         <div className="form-group">
-          <label htmlFor="lastName"></label>
+          <label htmlFor="lastName">
+            Last Name
+          </label>
           <input
             type="text"
+            value={registerUser.lastName}
             onChange={(event) =>
               setRegisterUser((prevUser) => ({
                 ...prevUser,
@@ -67,9 +75,12 @@ const Register = () => {
           <span></span>
         </div>
         <div className="form-group">
-          <label htmlFor="email"></label>
+          <label htmlFor="email">
+            Email
+          </label>
           <input
             type="email"
+            value={registerUser.email}
             onChange={(event) =>
               setRegisterUser((prevUser) => ({
                 ...prevUser,
@@ -80,9 +91,12 @@ const Register = () => {
           <span></span>
         </div>
         <div className="form-group">
-          <label htmlFor="username"></label>
+          <label htmlFor="username">
+            Username
+          </label>
           <input
             type="text"
+            value={registerUser.username}
             onChange={(event) =>
               setRegisterUser((prevUser) => ({
                 ...prevUser,
@@ -93,9 +107,12 @@ const Register = () => {
           <span></span>
         </div>
         <div className="form-group">
-          <label htmlFor="dateOfBirth"></label>
+          <label htmlFor="dateOfBirth">
+            Date Of Birth
+          </label>
           <input
             type="date"
+            value={registerUser.dateOfBirth}
             onChange={(event) =>
               setRegisterUser((prevUser) => ({
                 ...prevUser,
@@ -106,9 +123,12 @@ const Register = () => {
           <span></span>
         </div>
         <div className="form-group">
-          <label htmlFor="password"></label>
+          <label htmlFor="password">
+            Password
+          </label>
           <input
             type="password"
+            value={registerUser.password}
             onChange={(event) =>
               setRegisterUser((prevUser) => ({
                 ...prevUser,
@@ -119,9 +139,12 @@ const Register = () => {
           <span></span>
         </div>
         <div className="form-group">
-          <label htmlFor="checkPassword"></label>
+          <label htmlFor="confirmedPassword">
+            Confirmed Password
+          </label>
           <input
             type="password"
+            value={registerUser.confirmedPassword}
             onChange={(event) =>
               setRegisterUser((prevUser) => ({
                 ...prevUser,
@@ -130,6 +153,9 @@ const Register = () => {
             }
           />
           <span></span>
+        </div>
+        <div className="form-group">
+          <button type="submit">Register</button>
         </div>
       </form>
     </>
