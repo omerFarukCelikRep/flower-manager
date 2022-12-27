@@ -1,5 +1,5 @@
 import "./App.css";
-import { Routers } from "./components/routers/Routers";
+import Routers from "./components/routers/Routers";
 
 
 function App(){
@@ -7,11 +7,6 @@ function App(){
     <>
       <Routers />    
     </>
-    // <Routes>
-    //   <Route path="/" element={<Footer />} />
-    //   <Route path="register" element={<Register />} />
-    //   <Route exact path="*" element={<NotFound />} />
-    // </Routes>
   );
 }
 
