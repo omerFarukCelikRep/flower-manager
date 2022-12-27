@@ -4,12 +4,50 @@
   margin: 0;
 }
 
-
-/* footer alanı start */
 .text-light {
   color: white;
 }
 
+/* header start */
+.navbar {
+  background-color: #872361;
+}
+.container {
+  padding: 10px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.logo {
+  display: flex;
+  flex-direction: column;
+  margin-left: 50px;
+}
+
+.navbar-texts ul {
+ list-style: none;
+ display: flex;
+
+}
+.navbar-texts ul a {
+  margin-left: 12px;
+  color: #fff;
+  text-decoration: none;
+}
+
+.navbar-button {
+  margin-right: 80px;
+}
+.navbar-button button {
+  margin-left: 10px;
+  background-color:darkorange;
+  border: none;
+  cursor: pointer;
+  padding: 8px 15px;
+}
+/* header end */
+
+/* footer alanı start */
 .footer {
   background-color: #872361;
   margin-top: 300px;
