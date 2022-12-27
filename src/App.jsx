@@ -1,16 +1,17 @@
 import "./App.css";
-import { Route, Routes } from "react-router-dom";
-import Footer from "./components/shared/footer/Footer";
-import NotFound from "./components/shared/not-Found/NotFound";
-import Register from "./pages/register/Register";
+import { Routers } from "./components/routers/Routers";
 
-function App() {
+
+function App(){
   return (
-    <Routes>
-      <Route path="/" element={<Footer />} />
-      <Route path="register" element={<Register />} />
-      <Route exact path="*" element={<NotFound />} />
-    </Routes>
+    <>
+      <Routers />    
+    </>
+    // <Routes>
+    //   <Route path="/" element={<Footer />} />
+    //   <Route path="register" element={<Register />} />
+    //   <Route exact path="*" element={<NotFound />} />
+    // </Routes>
   );
 }
 
