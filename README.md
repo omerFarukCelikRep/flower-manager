@@ -23,6 +23,8 @@
 - React JS
 - Json Server
 - Sass
+- Axios
+- React Router
 
 ---
 
