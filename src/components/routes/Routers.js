@@ -15,7 +15,7 @@ export const Routers = () => {
       <Router>
         {/* <Switch> */}
         <Routes>
-          <Route exact path="/" element={<HomePage />}></Route>
+          <Route path="/" element={<HomePage />}></Route>
           <Route path="/About" element={<AboutPage />}></Route>
           <Route path="/Products" element={<ProductsPage />}></Route>
           <Route path="/Contact" element={<ContactPage />}></Route>
