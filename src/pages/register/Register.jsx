@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-const Register = (/*{register}*/) => {
+const Register = () => {
   const [registerUser, setRegisterUser] = useState({
     firstName: "",
     lastName: "",
@@ -20,6 +20,9 @@ const Register = (/*{register}*/) => {
     password: false,
     confirmedPassword: false,
   });
+
+  const [error, setError] = useState("");
+  const [success, setSuccess] = useState(false);
   // const [registerUserFocus, setRegisterUserFocus] = useState({
   //   firstName: false,
   //   lastName: false,
@@ -30,11 +33,13 @@ const Register = (/*{register}*/) => {
   //   confirmedPassword: false,
   // });
 
-  //register(registerUser);
+  const handleSubmit = (e) => {
+    e.preventDefault();
+  };
 
   return (
     <>
-      <form className="register-form">
+      <form className="register-form" onSubmit={handleSubmit}>
         <div className="form-group">
           <label htmlFor="firstName"></label>
           <input
