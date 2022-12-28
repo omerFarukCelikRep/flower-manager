@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import StringHelper from "../../helpers/StringHelper";
+import AuthService from "../../services/AuthService";
 
 const Register = () => {
   const [registerUser, setRegisterUser] = useState({
@@ -36,7 +37,11 @@ const Register = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(registerUser);
+
+    setIsValid({ ...registerUser});
+    if (Object.values(registerUser).every(val => val)) {
+      AuthService.register(registerUser);
+    }
   };
 
   return (
@@ -52,7 +57,7 @@ const Register = () => {
             onChange={(event) =>
               setRegisterUser((prevUser) => ({
                 ...prevUser,
-                firstName: event.target.value,
+                firstName: event.target.value.trim(),
               }))
             }
           />
@@ -68,7 +73,7 @@ const Register = () => {
             onChange={(event) =>
               setRegisterUser((prevUser) => ({
                 ...prevUser,
-                lastName: event.target.value,
+                lastName: event.target.value.trim(),
               }))
             }
           />
@@ -84,7 +89,7 @@ const Register = () => {
             onChange={(event) =>
               setRegisterUser((prevUser) => ({
                 ...prevUser,
-                email: event.target.value,
+                email: event.target.value.trim(),
               }))
             }
           />
@@ -100,7 +105,7 @@ const Register = () => {
             onChange={(event) =>
               setRegisterUser((prevUser) => ({
                 ...prevUser,
-                username: event.target.value,
+                username: event.target.value.trim(),
               }))
             }
           />
@@ -132,7 +137,7 @@ const Register = () => {
             onChange={(event) =>
               setRegisterUser((prevUser) => ({
                 ...prevUser,
-                password: event.target.value,
+                password: event.target.value.trim(),
               }))
             }
           />
@@ -148,7 +153,7 @@ const Register = () => {
             onChange={(event) =>
               setRegisterUser((prevUser) => ({
                 ...prevUser,
-                confirmedPassword: event.target.value,
+                confirmedPassword: event.target.value.trim(),
               }))
             }
           />
