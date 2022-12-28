@@ -1,6 +1,5 @@
 import React from "react";
-import { Link } from 'react-router-dom';
-
+import { Link } from "react-router-dom";
 
 export const Header = () => {
   return (
@@ -18,7 +17,9 @@ export const Header = () => {
           </ul>
         </div>
         <div className="navbar-button">
-          <button>Sign In</button>
+          <Link to="/register">
+            <button>Sign In</button>
+          </Link>
           <button>Log In</button>
         </div>
       </div>
