@@ -1,14 +1,16 @@
 # Flower Manager App
 
-- [Hakkında](#about)
-- [Kullanılan Teknolojiler](#technologies)
-- [Yetkilendirme](#auth)
-- [Register](#register)
-- [Register Request](#register-request)
-- [Register Response](#register-response)
-- [Login](#login)
-- [Login Request](#login-request)
-- [Login Response](#login-response)
+- [Flower Manager App](#flower-manager-app)
+  - [About](#about)
+  - [Technogies](#technogies)
+  - [Json-Server](#json-server)
+  - [Auth](#auth)
+    - [Register](#register)
+      - [Register Request](#register-request)
+      - [Register Response](#register-response)
+    - [Login](#login)
+      - [Login Request](#login-request)
+      - [Login Response](#login-response)
 
 ---
 
@@ -25,6 +27,16 @@
 - Sass
 - Axios
 - React Router
+
+---
+
+## Json-Server
+
+Json Server çalıştırmak için :
+
+```console
+json-server --watch src\assets\db\db.json --port 4732 
+```
 
 ---
 
