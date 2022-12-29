@@ -1,16 +1,18 @@
-import ApiService from "./ApiService";
 import UserService from "./UserService";
 
-const { getAsync, postAsync } = ApiService;
-const { getByEmail } = UserService;
+const { getByEmailAsync, addAsync } = UserService;
 
-const register = (user) => {
+const register = async (user) => {
   //Email kontrol
-  if(getByEmail(user.email)){
-    return false;
+  const foundUser = await getByEmailAsync(user.email);
+  if(foundUser){
+    return false; //TODO: Dönüş tipini düzelt
   }
   
   // Kullanıcı ekle
+  const addedUser = await addAsync(user);
+  return addedUser ? true : false;
+  
 };
 
 const AuthService = {
