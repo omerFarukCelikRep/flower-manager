@@ -8,20 +8,23 @@ const instance = axios.create({
 
 const getAsync = (endpoint) => instance.get(endpoint);
 
-const postAsync = (endpoint, data) => {
-  data.createdDate = new Date();
+const postAsync = (endpoint, data) => instance.post(endpoint, data);
 
-  return instance.post(endpoint, data);
-};
-
-const putAsync = (endpoint, data) => {
-  data.updatedDate = new Date();
-
-  return instance.put(endpoint, data);
-};
+const putAsync = (endpoint, data) => instance.put(endpoint, data);
 
 const deleteAsync = (endpoint, id) => instance.delete(`${endpoint}/${id}`);
 
-const ApiService = { getAsync, postAsync, putAsync, deleteAsync };
+const getLastIdAsync = async (endpoint) => {
+  const res = await getAsync(endpoint);
+  return res.data[res.data - 1].id;
+};
+
+const ApiService = {
+  getAsync,
+  postAsync,
+  putAsync,
+  deleteAsync,
+  getLastIdAsync,
+};
 
 export default ApiService;
