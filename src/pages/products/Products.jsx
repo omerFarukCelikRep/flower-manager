@@ -1,10 +1,11 @@
 import React from "react";
-import Header from "../../components/shared/header/Header";
+import ProductForm from "../../ProductForm/ProductForm";
+
 
 export const Products = () => {
   return (
     <div>
-      <Header />
+      <ProductForm/>
       ProductsPage selam
     </div>
   );
