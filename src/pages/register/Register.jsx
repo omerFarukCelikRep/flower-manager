@@ -1,5 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
-import StringHelper from "../../helpers/StringHelper";
+import React, { useState } from "react";
 import AuthService from "../../services/AuthService";
 
 const Register = () => {
