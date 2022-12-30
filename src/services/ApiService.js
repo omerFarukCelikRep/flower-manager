@@ -16,7 +16,7 @@ const deleteAsync = (endpoint, id) => instance.delete(`${endpoint}/${id}`);
 
 const getLastIdAsync = async (endpoint) => {
   const res = await getAsync(endpoint);
-  return res.data[res.data - 1].id;
+  return res.data[res.data.length - 1].id;
 };
 
 const ApiService = {
