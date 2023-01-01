@@ -6,7 +6,7 @@ const endpoint = "/users";
 const getByEmailAsync = async (email) => {
   const res = await getAsync(endpoint);
 
-  return res.data.find((user) => user.email === email);
+  return res?.data?.find((user) => user.email === email);
 };
 
 const addAsync = async (user) => {
