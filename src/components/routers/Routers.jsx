@@ -7,14 +7,14 @@ import Home from "../../pages/home/Home";
 import About from "../../pages/about/About";
 import Products from "../../pages/products/Products";
 import Contact from "../../pages/contact/Contact";
-import LayOut from "../../pages/layOut/LayOut";
+import Layout from "../../pages/layout/Layout";
 import Login from "../../pages/login/Login";
 
 const Routers = () => {
   return (
     <>
       <Routes>
-        <Route path="/" element={<LayOut />}>
+        <Route path="/" element={<Layout />}>
           <Route index path="/" element={<Home />} />
           <Route path="/About" element={<About />} />
           <Route path="/Products" element={<Products />} />

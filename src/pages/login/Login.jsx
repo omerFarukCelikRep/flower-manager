@@ -1,10 +1,11 @@
 import React, { useContext, useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import AuthContext from "../../context/AuthProvider";
+import { history } from "../../helpers/HistoryHelper";
 import AuthService from "../../services/AuthService";
 
 const Login = () => {
-  const { setAuth } = useContext(AuthContext);
+  const { auth, setAuth } = useContext(AuthContext);
 
   const emailRef = useRef();
   const errorRef = useRef();
@@ -12,7 +13,12 @@ const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
-  const [success, setSuccess] = useState(false);
+
+  useEffect(() => {
+    if (auth) {
+      history.navigate("/");
+    }
+  });
 
   useEffect(() => {
     emailRef.current.focus();
@@ -22,12 +28,17 @@ const Login = () => {
     setError("");
   }, [email, password]);
 
-  const login = async (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
 
     const result = await AuthService.login(email, password);
-
-    setSuccess(true);
+    if (!result?.isSuccess) {
+      setError(result.message);
+      return;
+    }
+    
+    setAuth({ id: result?.data?.id, email: result?.data?.email });
+    history.navigate("/");
   };
   return (
     <>
@@ -40,7 +51,7 @@ const Login = () => {
         >
           {error}
         </p>
-        <form onSubmit={login}>
+        <form onSubmit={handleSubmit}>
           <div className="form-group">
             <label htmlFor="email">Email</label>
             <input
@@ -71,7 +82,7 @@ const Login = () => {
         <p>
           Need an Account?
           <Link to="/register">
-            <a href="#">Register</a>
+            <span>Register</span>
           </Link>
         </p>
       </section>
