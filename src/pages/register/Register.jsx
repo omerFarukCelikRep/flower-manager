@@ -1,7 +1,5 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import Footer from "../../components/shared/footer/Footer";
-import Header from "../../components/shared/header/Header";
 import AuthService from "../../services/AuthService";
 import "../register/Register.scss";
 
@@ -28,15 +26,6 @@ const Register = () => {
 
   const [error, setError] = useState("");
   const [success, setSuccess] = useState(false);
-  // const [registerUserFocus, setRegisterUserFocus] = useState({
-  //   firstName: false,
-  //   lastName: false,
-  //   email: false,
-  //   username: false,
-  //   dateOfBirth: false,
-  //   password: false,
-  //   confirmedPassword: false,
-  // });
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -66,7 +55,6 @@ const Register = () => {
 
   return (
     <>
-      <Header />
       {success ? (
         <section>
           <h2>Registered Successfully!</h2>
@@ -162,9 +150,7 @@ const Register = () => {
                 }
               />
               {!isValid.dateOfBirth && (
-                <span className="validation">
-                  Date Of Birth is not valid
-                </span>
+                <span className="validation">Date Of Birth is not valid</span>
               )}
             </div>
             <div className="form-group">
@@ -205,7 +191,6 @@ const Register = () => {
           </form>
         </section>
       )}
-      <Footer />
     </>
   );
 };
