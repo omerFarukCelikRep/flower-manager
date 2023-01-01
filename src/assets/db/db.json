@@ -30,6 +30,17 @@
       "confirmedPassword": "Pa$$w0rd!",
       "id": 3,
       "createdDate": "2022-12-30T16:02:54.955Z"
+    },
+    {
+      "firstName": "Keefe",
+      "lastName": "Aute et in aspernatu",
+      "email": "senoxukow@mailinator.com",
+      "username": "Commodo sit non dolo",
+      "dateOfBirth": "1981-08-12",
+      "password": "Pa$$w0rd!",
+      "confirmedPassword": "Pa$$w0rd!",
+      "id": 4,
+      "createdDate": "2022-12-30T17:50:39.546Z"
     }
   ],
   "flowers": [
