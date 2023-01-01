@@ -27,7 +27,7 @@ const Register = () => {
   const [error, setError] = useState("");
   const [success, setSuccess] = useState(false);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     setIsValid({ ...registerUser });
@@ -35,8 +35,8 @@ const Register = () => {
       return;
     }
 
-    const result = AuthService.register(registerUser);
-    if (result) {
+    const result = await AuthService.register({ ...registerUser });
+    if (result?.isSuccess) {
       setRegisterUser({
         firstName: "",
         lastName: "",
@@ -50,7 +50,7 @@ const Register = () => {
       return;
     }
 
-    setError("Hata Mesajı"); //TODO: Hata mesajı result üzerinden alınacak
+    setError(result.message); //TODO: Hata mesajı result üzerinden alınacak
   };
 
   return (
@@ -67,6 +67,7 @@ const Register = () => {
       ) : (
         <section>
           <h2>Register</h2>
+          {error && <p>{error}</p>}
           <form
             id="register-form"
             className="register-form"
