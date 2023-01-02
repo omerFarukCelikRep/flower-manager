@@ -1,9 +1,15 @@
-import React, { useContext } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
-import AuthContext from "../../../context/AuthProvider";
+import { useAuthContext } from "../../../context/AuthProvider";
+import { history } from "../../../helpers/HistoryHelper";
 
 const Header = () => {
-  const { auth } = useContext(AuthContext);
+  const { auth, setAuth } = useAuthContext();
+
+  const logout = () => {
+    setAuth();
+    history.navigate("/");
+  };
   return (
     <div className="navbar">
       <div className="container">
@@ -30,9 +36,7 @@ const Header = () => {
             </>
           ) : (
             <>
-              <Link to="/logout">
-                <button>Logout</button>
-              </Link>
+              <button onClick={logout}>Logout</button>
             </>
           )}
         </div>
