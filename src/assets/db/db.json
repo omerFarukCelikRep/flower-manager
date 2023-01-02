@@ -190,6 +190,16 @@
       "confirmedPassword": "tuna",
       "id": 19,
       "createdDate": "2023-01-01T20:51:13.883Z"
+    },
+    {
+      "firstName": "Jordan",
+      "lastName": "Nisi voluptatem Und",
+      "email": "cyxafytaki@mailinator.com",
+      "username": "Sint itaque magnam",
+      "dateOfBirth": "2000-02-23",
+      "password": "Pa$$w0rd!",
+      "id": 20,
+      "createdDate": "2023-01-02T17:54:35.267Z"
     }
   ],
   "flowers": [
@@ -218,6 +228,15 @@
       "image": "C:\\fakepath\\6SdPKKDAIuVHyimXxORdVwqTBKLO7pHH.jpeg",
       "id": 3,
       "createdDate": "2023-01-01T20:50:44.091Z"
+    },
+    {
+      "flowerName": "Clarke Perez",
+      "description": "813",
+      "price": "200",
+      "stockCount": "683",
+      "image": "C:\\fakepath\\software.jpg",
+      "id": 4,
+      "createdDate": "2023-01-02T17:56:30.965Z"
     }
   ]
 }
