@@ -1,11 +1,11 @@
-import React, { useContext, useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
-import AuthContext from "../../context/AuthProvider";
+import { useAuthContext } from "../../context/AuthProvider";
 import { history } from "../../helpers/HistoryHelper";
 import AuthService from "../../services/AuthService";
 
 const Login = () => {
-  const { auth, setAuth } = useContext(AuthContext);
+  const { auth, setAuth } = useAuthContext();
 
   const emailRef = useRef();
   const errorRef = useRef();
@@ -36,7 +36,7 @@ const Login = () => {
       setError(result.message);
       return;
     }
-    
+
     setAuth({ id: result?.data?.id, email: result?.data?.email });
     history.navigate("/");
   };

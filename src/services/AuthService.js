@@ -1,5 +1,3 @@
-import { useContext } from "react";
-import AuthContext from "../context/AuthProvider";
 import UserService from "./UserService";
 
 const { getByEmailAsync, addAsync } = UserService;
