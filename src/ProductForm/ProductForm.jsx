@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import AuthProductService from "./../services/AuthProductService";
+
+
 // import  ProductService   from "./../services/ProductService";
 
 const CreateProduct = () => {
@@ -23,6 +25,19 @@ const CreateProduct = () => {
   const [productError, setProductError] = useState("");
   const [productSuccess, setProductSuccess] = useState(false);
 
+  const handleFileChange = (event) => {
+    const file = event.target.files[0];
+    const reader = new FileReader();
+    reader.readAsDataURL(file);
+    reader.onload = () => {
+      const base64 = reader.result;
+      setAddProduct((prevProduct) => ({
+        ...prevProduct,
+        image: base64,
+      }));
+    };
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -44,6 +59,8 @@ const CreateProduct = () => {
       return;
     }
     setProductError("Hata Mesajı");
+
+
   };
   return (
     <>
@@ -134,16 +151,12 @@ const CreateProduct = () => {
             </div>
             <div className="form-group">
               <label htmlFor="description">Image</label>
+
               <input
                 type="file"
                 id="description"
-                value={addProduct.image}
-                onChange={(event) =>
-                  setAddProduct((prevProduct) => ({
-                    ...prevProduct,
-                    image: event.target.value,
-                  }))
-                }
+                // value={addProduct.image}
+                onChange={handleFileChange}
               />
               {!isProductValid.image && (
                 <span className="validation">Image is not valid</span>
