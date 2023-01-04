@@ -205,14 +205,14 @@
   "flowers": [
     {
       "id": 1,
-      "flowerName": "Çiçek İsmi",
+      "name": "Çiçek İsmi",
       "description": "Çiçek tip",
       "price": "Fiyat",
       "stockCount": "Stok Adedi",
       "image": "Resim"
     },
     {
-      "flowerName": "adadda",
+      "name": "adadda",
       "description": "adadda",
       "price": "12",
       "stockCount": "12",
@@ -221,7 +221,7 @@
       "createdDate": "2023-01-01T20:49:10.030Z"
     },
     {
-      "flowerName": "asdasd",
+      "name": "asdasd",
       "description": "asdasd",
       "price": "14",
       "stockCount": "14",
@@ -230,7 +230,7 @@
       "createdDate": "2023-01-01T20:50:44.091Z"
     },
     {
-      "flowerName": "test",
+      "name": "test",
       "description": "test",
       "price": "1",
       "stockCount": "1",
@@ -239,7 +239,7 @@
       "createdDate": "2023-01-02T20:06:28.926Z"
     },
     {
-      "flowerName": "test2",
+      "name": "test2",
       "description": "test2",
       "price": "1",
       "stockCount": "1",
@@ -248,7 +248,7 @@
       "createdDate": "2023-01-02T20:10:07.781Z"
     },
     {
-      "flowerName": "test3",
+      "name": "test3",
       "description": "test3",
       "price": "3",
       "stockCount": "3",
@@ -257,7 +257,7 @@
       "createdDate": "2023-01-02T20:57:35.612Z"
     },
     {
-      "flowerName": "TEST",
+      "name": "TEST",
       "description": "TEST",
       "price": "0",
       "stockCount": "0",

@@ -2,12 +2,9 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import AuthProductService from "./../services/AuthProductService";
 
-
-// import  ProductService   from "./../services/ProductService";
-
 const CreateProduct = () => {
   const [addProduct, setAddProduct] = useState({
-    flowerName: "",
+    name: "",
     description: "",
     price: "",
     stockCount: "",
@@ -15,7 +12,7 @@ const CreateProduct = () => {
   });
 
   const [isProductValid, setIsProductValid] = useState({
-    flowerName: true,
+    name: true,
     description: true,
     price: true,
     stockCount: true,
@@ -49,7 +46,7 @@ const CreateProduct = () => {
     const productResult = AuthProductService.products(addProduct);
     if (productResult) {
       setAddProduct({
-        flowerName: "",
+        name: "",
         description: "",
         price: "",
         stockCount: "",
@@ -59,8 +56,6 @@ const CreateProduct = () => {
       return;
     }
     setProductError("Hata Mesajı");
-
-
   };
   return (
     <>
