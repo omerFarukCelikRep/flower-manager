@@ -1,16 +1,15 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
-    <div className="footer">
-      <div className="footer-logo-part">
+    <footer className="footer">
+      <div className="footer-content">
         <div className="footer-logo">
-          {/* flower-manager logo */}
           <img src="" alt="flower-manager-logo" />
-          <h1 className="text-light"> Flower Manager</h1>
+          <h2 className="text-light">Flower Manager</h2>
         </div>
         <div className="footer-text">
-          {/* about flower-manager */}
           <p className="text-light">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit.Eu pretium
             nunc sit nulla etiam. Dictum ut in ac interdum nulla nec. Sit
@@ -20,30 +19,27 @@ const Footer = () => {
           </p>
         </div>
         <div className="footer-contact text-light">
-          {/* flower manager contact */}
-          <h5>
+          <p>
             Evliya Çelebi Mah. İstasyon Cad. Miraç Sk. No: 11 Tuzla /
             İSTANBUL-TURKEY
-          </h5>
-          <h5>+(90) 533-310-38-24</h5>
-          <h5> flowermanager@gmail.com</h5>
+          </p>
+          <p>+(90) 533-310-38-24</p>
+          <p> flowermanager@gmail.com</p>
         </div>
       </div>
       <hr className="line" color="grey" />
-      <div className="footer-texts">
-        {/* footer navbar */}
+      <div className="footer-nav">
         <ul>
-          <li className="text-light">Home</li>
-          <li className="text-light">About</li>
-          <li className="text-light">Products</li>
-          <li className="text-light">Users</li>
+          <Link to="/">Home</Link>
+          <Link to="/about">About</Link>
+          <Link to="/products">Products</Link>
+          <Link to="/users">Users</Link>
         </ul>
         <div className="copy-right-text text-light">
-          <h5>© Copyright {new Date().getFullYear()}</h5>
-          <h5>Privacy policy</h5>
+          <b>© Copyright {new Date().getFullYear()}</b>
         </div>
       </div>
-    </div>
+    </footer>
   );
 };
 
