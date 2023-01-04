@@ -4,19 +4,18 @@ import { Link } from "react-router-dom";
 const FlowerCard = ({ flower }) => {
   return (
     <>
-      <div class="card">
+      <div class="flower-card">
         <div class="face face1">
           <div class="content">
             <img src={flower.image} alt={flower.name} />
-            <h3>Design</h3>
+            <h3>{flower.name}</h3>
           </div>
         </div>
         <div class="face face2">
           <div class="content">
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cum
-              cumque minus iste veritatis provident at.
-            </p>
+            <p>{flower.description}</p>
+            <p>{flower.price} <span>TL</span></p>
+            <p>{flower.stockCount} <span>Adet</span></p>
             <Link to={`/flowers/${flower.id}`}>Read More</Link>
           </div>
         </div>
