@@ -81,15 +81,15 @@ const CreateProduct = () => {
               <input
                 type="text"
                 id="flowerName"
-                value={addProduct.flowerName}
+                value={addProduct.name}
                 onChange={(event) =>
                   setAddProduct((prevProduct) => ({
                     ...prevProduct,
-                    flowerName: event.target.value.trim(),
+                    name: event.target.value.trim(),
                   }))
                 }
               />
-              {!isProductValid.flowerName && (
+              {!isProductValid.name && (
                 <span className="validation">Flower Name is not valid</span>
               )}
             </div>
