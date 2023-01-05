@@ -76,8 +76,7 @@ $main-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5);
     flex-direction: column;
     background-color: $background-color;
     color: $primary-color;
-    position: fixed;
-    bottom: 0;
+    position: inherit;
 
     .footer-content {
       display: grid;
