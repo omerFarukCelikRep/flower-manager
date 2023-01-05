@@ -7,7 +7,7 @@ import Home from "../../pages/home/Home";
 import About from "../../pages/about/About";
 import Products from "../../pages/products/Products";
 import Contact from "../../pages/contact/Contact";
-import Layout  from "../../pages/layout/Layout";
+import Layout  from "../../pages/layOut/LayOut";
 import Login from "../../pages/login/Login";
 
 const Routers = () => {
