@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import AuthService from "../../services/AuthService";
-import "../register/Register.scss";
+import "../register/register.scss";
 
 const Register = () => {
   const [registerUser, setRegisterUser] = useState({
