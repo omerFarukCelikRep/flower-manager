@@ -13,13 +13,15 @@ const FlowerList = () => {
     };
 
     getAllFlowers();
-  }, [flowers]);
+  }, []);
   return (
     <>
-      {error && <p>{error}</p>}
-      {flowers.map((flower) => (
-        <FlowerCard flower={flower} />
-      ))}
+      <div className="flower-list-container">
+        {error && <p>{error}</p>}
+        {flowers.map((flower) => (
+          <FlowerCard flower={flower} key={flower.id} />
+        ))}
+      </div>
     </>
   );
 };
