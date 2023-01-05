@@ -5,10 +5,10 @@ import NotFound from "../../pages/not-Found/NotFound";
 import Register from "../../pages/register/Register";
 import Home from "../../pages/home/Home";
 import About from "../../pages/about/About";
-import Products from "../../pages/products/Products";
 import Contact from "../../pages/contact/Contact";
-import Layout  from "../../pages/layOut/LayOut";
+import Layout from "../../pages/layout/Layout";
 import Login from "../../pages/login/Login";
+import Flowers from "../../pages/flowers/Flowers";
 
 const Routers = () => {
   return (
@@ -17,7 +17,7 @@ const Routers = () => {
         <Route path="/" element={<Layout />}>
           <Route index path="/" element={<Home />} />
           <Route path="/About" element={<About />} />
-          <Route path="/Products" element={<Products />} />
+          <Route path="/flowers" element={<Flowers />} />
           <Route path="/Contact" element={<Contact />} />
           <Route path="/register" element={<Register />} />
           <Route path="/login" element={<Login />} />
