@@ -1,40 +1,112 @@
-$primary-color: #82c3ec;
-$secondary-color: #4b56d2;
-$background-color: #472183;
-$dark-color: #333;
-$light-color: #f4f4f4;
-$main-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5);
-
-.text-light {
-  color: $light-color;
-}
-
-.text-dark {
-  color: $dark-color;
-}
+@import "./assets/styles/utilities.scss";
 
 .app {
-  /* Header */
-  .app-header {
+  background: url("./img/flower-1.jpeg");
+  background-color: $light-color;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  min-height: calc(100vh - 270px);
+}
+
+/* Header */
+.app-header {
+  display: grid;
+  grid-template-columns: 0.5fr 1fr 0.5fr;
+  justify-items: center;
+  align-items: center;
+  height: 70px;
+  background-color: $background-color;
+  color: $primary-color;
+  position: sticky;
+  top: 0;
+  gap: 0 50px;
+  z-index: 1000;
+
+  .navbar ul {
+    display: flex;
+    list-style: none;
+    gap: 0 10px;
+
+    a {
+      display: flex;
+      height: 60px;
+      align-items: center;
+      text-decoration: none;
+      color: $light-color;
+
+      &:hover {
+        background-color: $secondary-color;
+        padding-inline: 10px;
+        border-bottom: 1px solid $light-color;
+      }
+    }
+  }
+
+  .auth-buttons {
+    display: flex;
+    align-items: center;
+    a {
+      margin-left: 10px;
+      background-color: #ff8c00;
+      color: $dark-color;
+      border: none;
+      cursor: pointer;
+      padding: 8px 15px;
+      text-decoration: none;
+      border-radius: 5%;
+
+      &:hover {
+        color: $secondary-color;
+        height: 40px;
+        display: flex;
+        align-items: center;
+      }
+    }
+  }
+}
+
+/* Footer */
+.footer {
+  display: flex;
+  flex-direction: column;
+  background-color: $background-color;
+  color: $primary-color;
+  width: 100%;
+  height: 200px;
+
+  .footer-content {
     display: grid;
     grid-template-columns: 0.5fr 1fr 0.5fr;
-    justify-items: center;
+    gap: 10px 50px;
+    height: 150px;
+    align-content: center;
     align-items: center;
-    height: 70px;
-    background-color: $background-color;
-    color: $primary-color;
-    // position: sticky;
-    top: 0;
-    gap: 0 50px;
+    justify-items: center;
+  }
 
-    .navbar ul {
+  .footer-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-inline: 5%;
+    position: relative;
+    bottom: 0;
+
+    ul {
       display: flex;
+      gap: 10px;
       list-style: none;
-      gap: 0 10px;
+      height: 40px;
+      align-items: center;
 
       a {
         display: flex;
-        height: 60px;
+        height: 40px;
         align-items: center;
         text-decoration: none;
         color: $light-color;
@@ -43,76 +115,6 @@ $main-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5);
           background-color: $secondary-color;
           padding-inline: 10px;
           border-bottom: 1px solid $light-color;
-        }
-      }
-    }
-
-    .auth-buttons {
-      display: flex;
-      align-items: center;
-      a {
-        margin-left: 10px;
-        background-color: #ff8c00;
-        color: $dark-color;
-        border: none;
-        cursor: pointer;
-        padding: 8px 15px;
-        text-decoration: none;
-        border-radius: 5%;
-
-        &:hover {
-          color: $secondary-color;
-          height: 40px;
-          display: flex;
-          align-items: center;
-        }
-      }
-    }
-  }
-
-  /* Footer */
-  .footer {
-    display: flex;
-    flex-direction: column;
-    background-color: $background-color;
-    color: $primary-color;
-    position: inherit;
-
-    .footer-content {
-      display: grid;
-      grid-template-columns: 0.5fr 1fr 0.5fr;
-      gap: 10px 50px;
-      height: 150px;
-      align-content: center;
-      align-items: center;
-      justify-items: center;
-    }
-
-    .footer-nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-inline: 5%;
-
-      ul {
-        display: flex;
-        gap: 10px;
-        list-style: none;
-        height: 40px;
-        align-items: center;
-
-        a {
-          display: flex;
-          height: 40px;
-          align-items: center;
-          text-decoration: none;
-          color: $light-color;
-
-          &:hover {
-            background-color: $secondary-color;
-            padding-inline: 10px;
-            border-bottom: 1px solid $light-color;
-          }
         }
       }
     }
