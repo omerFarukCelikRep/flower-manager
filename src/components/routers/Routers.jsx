@@ -6,7 +6,7 @@ import Register from "../../pages/register/Register";
 import Home from "../../pages/home/Home";
 import About from "../../pages/about/About";
 import Contact from "../../pages/contact/Contact";
-import Layout from "../../pages/layout/Layout";
+import Layout from "../../pages/layOut/LayOut";
 import Login from "../../pages/login/Login";
 import Flowers from "../../pages/flowers/Flowers";
 
