@@ -1,0 +1,19 @@
+$primary-color: #82c3ec;
+$secondary-color: #4b56d2;
+$background-color: #472183;
+$dark-color: #333;
+$light-color: #f4f4f4;
+$danger-color: #ff0000;
+$main-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5);
+
+.text-light {
+  color: $light-color;
+}
+
+.text-dark {
+  color: $dark-color;
+}
+
+.text-danger {
+  color: $danger-color;
+}
