@@ -2,13 +2,12 @@
 import { Route, Routes } from "react-router-dom";
 import React from "react";
 import NotFound from "../../pages/not-Found/NotFound";
-import Register from "../../pages/register/Register";
 import Home from "../../pages/home/Home";
 import About from "../../pages/about/About";
 import Contact from "../../pages/contact/Contact";
-import Layout from "../../pages/layOut/LayOut";
-import Login from "../../pages/login/Login";
+import Layout from "../../pages/layout/Layout";
 import Flowers from "../../pages/flowers/Flowers";
+import Auth from "../../pages/auth/Auth";
 
 const Routers = () => {
   return (
@@ -19,8 +18,9 @@ const Routers = () => {
           <Route path="/About" element={<About />} />
           <Route path="/flowers" element={<Flowers />} />
           <Route path="/Contact" element={<Contact />} />
-          <Route path="/register" element={<Register />} />
-          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Auth />} />
+          <Route path="/auth" element={<Auth />} />
+          <Route path="/login" element={<Auth />} />
           <Route path="*" element={<NotFound />}></Route>
         </Route>
       </Routes>
