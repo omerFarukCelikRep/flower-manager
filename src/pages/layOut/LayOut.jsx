@@ -6,11 +6,11 @@ import Footer from "../../components/shared/footer/Footer";
 const Layout = () => {
   return (
     <>
+      <Header />
       <div className="app">
-        <Header />
         <Outlet />
-        <Footer />
       </div>
+      <Footer />
     </>
   );
 };
