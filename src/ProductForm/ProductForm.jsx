@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import AuthProductService from "./../services/AuthProductService";
+import "./ProductForm.scss";
 
 const CreateProduct = () => {
   const [addProduct, setAddProduct] = useState({
