@@ -2,11 +2,11 @@ import React from "react";
 import { useLocation } from "react-router-dom";
 import Login from "../../components/app/auth/login/Login";
 import Register from "../../components/app/auth/register/Register";
+import { history } from "../../helpers/HistoryHelper";
 import "./auth.scss";
 
 const Auth = () => {
   const location = useLocation();
-  console.log(location.pathname.substring(1));
 
   const containerClassName = `auth-container ${
     location.pathname.substring(1).toLowerCase() === "register"
@@ -23,12 +23,13 @@ const Auth = () => {
             <div className="overlay-panel overlay-left">
               <button
                 className="btn"
-                id="signIn"
-                onClick={(e) =>
+                onClick={(e) => {
                   e.target.parentElement.parentElement.parentElement.parentElement.classList.remove(
                     "right-panel-active"
-                  )
-                }
+                  );
+
+                  history.navigate("login");
+                }}
               >
                 Login
               </button>
@@ -36,12 +37,13 @@ const Auth = () => {
             <div className="overlay-panel overlay-right">
               <button
                 className="btn"
-                id="signUp"
-                onClick={(e) =>
+                onClick={(e) => {
                   e.target.parentElement.parentElement.parentElement.parentElement.classList.add(
                     "right-panel-active"
-                  )
-                }
+                  );
+
+                  history.navigate("register");
+                }}
               >
                 Register
               </button>
