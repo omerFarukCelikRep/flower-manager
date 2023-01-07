@@ -9,6 +9,9 @@ import Layout from "../../pages/layOut/LayOut";
 import Flowers from "../../pages/flowers/Flowers";
 import Auth from "../../pages/auth/Auth";
 import { AddProduct } from "../../pages/AddProduct/AddProduct";
+// import ProductDetails from '../../list/ProductDetails/ProductDetails';
+// import ProductDetails from "../../flowers/ProductDetails/ProductDetails";
+import ProductDetails from "../app/flowers/ProductDetails/ProductDetails";
 
 const Routers = () => {
   return (
@@ -18,6 +21,7 @@ const Routers = () => {
           <Route index path="/" element={<Home />} />
           <Route path="/About" element={<About />} />
           <Route path="/flowers" element={<Flowers />} />
+          <Route path="/flowers/:id" component={ProductDetails} />
           <Route path="/Contact" element={<Contact />} />
           <Route path="/AddProduct" element={<AddProduct />} />
           <Route path="/register" element={<Auth />} />
