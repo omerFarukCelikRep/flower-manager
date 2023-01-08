@@ -3,6 +3,22 @@ import ApiService from "./ApiService";
 const { getAsync, postAsync, getLastIdAsync } = ApiService;
 const endpoint = "/users";
 
+const getAllAsync = async () => {
+  const res = await getAsync(endpoint);
+  if (res.status > 199 && res.status < 300) {
+    return {
+      isSuccess: true,
+      data: res.data,
+    };
+  }
+
+  return {
+    isSuccess: false,
+    message: res.status,
+    data: [],
+  };
+};
+
 const getByEmailAsync = async (email) => {
   const res = await getAsync(endpoint);
 
@@ -24,6 +40,7 @@ const addAsync = async (user) => {
 };
 
 const UserService = {
+  getAllAsync,
   getByEmailAsync,
   addAsync,
 };
