@@ -1,9 +1,13 @@
-import React from "react";
+import React, { useState} from "react";
+
 import FlowerList from "../../components/app/flowers/list/FlowerList";
 import { Link } from "react-router-dom";
 import "../flowers/flowers.scss";
 
 const Flowers = () => {
+  const [searching, setSearching] = useState("");
+  const [isFlowerLoading, setIsFlowerLoading] = useState(false);
+
   return (
     <>
       <p className="create-product">
@@ -11,7 +15,18 @@ const Flowers = () => {
           <span>Create Product</span>
         </Link>
       </p>
-      <FlowerList />
+      <input
+        className="search-bar"
+        type="search"
+        placeholder="Flower Name..."
+        onChange={(event) => setSearching(event.target.value)}
+        value={searching}
+      />
+      {isFlowerLoading ? (
+        <p>Loading...</p>
+      ) : (
+      <FlowerList  searching={searching}/>
+      )}
     </>
   );
 };
