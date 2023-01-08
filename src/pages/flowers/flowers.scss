@@ -1,5 +1,12 @@
 @import "../../App.scss";
 
+.search-bar {
+  margin-top: 20px;
+  padding: 10px 20px;
+  border-radius: 10px;
+  border: solid 1px #ff8c00 ;
+}
+
 .create-product {
   margin-top: 20px;
   a {
