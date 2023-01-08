@@ -20,7 +20,12 @@ const getAllAsync = async () => {
 };
 
 const getByIdAsync = async (id) => {
-  const res = await getAsync(`${endpoint}/${id}`);
+  let res;
+  try {
+    res = await getAsync(`${endpoint}/${id}`);
+  } catch (error) {
+    res = error.response;
+  }
   if (res.status > 199 && res.status < 300) {
     return {
       isSuccess: true,

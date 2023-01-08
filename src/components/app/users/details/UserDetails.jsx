@@ -6,7 +6,6 @@ import UserService from "../../../../services/UserService";
 
 const UserDetails = () => {
   const { id } = useParams();
-  console.log(id);
 
   const [user, setUser] = useState({});
 

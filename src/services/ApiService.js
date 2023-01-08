@@ -23,7 +23,7 @@ const ApiService = {
   postAsync,
   putAsync,
   deleteAsync,
-  getLastIdAsync
+  getLastIdAsync,
 };
 
 export default ApiService;
