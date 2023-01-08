@@ -1,31 +1,34 @@
 @import "../../assets/styles/utilities.scss";
 @import "../../App.scss";
 
+.user-details-container,
 .user-list-container {
   background: url("../../img/flower-1.jpeg");
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: cover;
   background-color: $dark-color;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 40px;
   margin: 5%;
   padding: 25px;
   border-radius: 25px;
+  width: 90%;
+}
+
+.user-list-container {
+  flex-wrap: wrap;
+  gap: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
   .user-card {
     position: relative;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
     overflow: hidden;
     margin: 10px;
     min-width: 250px;
     max-width: 350px;
-    min-height: 450px;
     width: 100%;
     background-color: $background-color;
     color: $primary-color;
@@ -53,9 +56,9 @@
     }
 
     .user-card-content {
-      padding: 5% 10% 15%;
+      padding: 5% 10%;
       display: grid;
-      grid-template-rows: 1fr 0.5fr 0.5fr 0.5fr 1fr;
+      grid-template-rows: 1fr 0.5fr 0.5fr;
 
       * {
         margin-block: 5px;
@@ -89,6 +92,48 @@
 
       a {
         text-decoration: none;
+      }
+    }
+  }
+}
+
+.user-details-container {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  box-shadow: 0 0 15px 3px $primary-color;
+  aside {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    align-self: baseline;
+    justify-self: center;
+
+    img {
+      border: 1px solid $secondary-color;
+      border-radius: 25px;
+    }
+  }
+
+  .details {
+    height: 500px;
+    padding: 30px;
+    display: block;
+
+    .details-title {
+      font-size: 2rem;
+      border-bottom: 1px solid $secondary-color;
+    }
+
+    .details-content {
+      margin-top: 20px;
+      font-size: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+
+      .content-group {
+        display: grid;
+        grid-template-columns: 0.3fr 0.05fr 1fr;
       }
     }
   }
