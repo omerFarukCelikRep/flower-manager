@@ -2,7 +2,11 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 import { Link } from "react-router-dom";
 import BlankPicture from "../../../../img/blank-profile-photo.jpeg";
-import { faFacebook, faTwitter, faYoutube } from "@fortawesome/free-brands-svg-icons";
+import {
+  faFacebook,
+  faTwitter,
+  faYoutube,
+} from "@fortawesome/free-brands-svg-icons";
 
 const UserCard = ({ user }) => {
   return (
@@ -16,9 +20,7 @@ const UserCard = ({ user }) => {
         </div>
         <div className="user-card-content">
           <h3>{`${user.firstName} ${user.lastName}`}</h3>
-          <p>{user.username}</p>
           <p>{user.email}</p>
-          <p>{user.dateOfBirth}</p>
           <div className="social">
             <Link to={`/users/${user.id}`}>
               <i>
