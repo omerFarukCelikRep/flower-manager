@@ -19,6 +19,22 @@ const getAllAsync = async () => {
   };
 };
 
+const getByIdAsync = async (id) => {
+  const res = await getAsync(`${endpoint}/${id}`);
+  if (res.status > 199 && res.status < 300) {
+    return {
+      isSuccess: true,
+      data: res.data,
+    };
+  }
+
+  return {
+    isSuccess: false,
+    message: res.status,
+    data: {},
+  };
+};
+
 const getByEmailAsync = async (email) => {
   const res = await getAsync(endpoint);
 
@@ -43,6 +59,7 @@ const UserService = {
   getAllAsync,
   getByEmailAsync,
   addAsync,
+  getByIdAsync,
 };
 
 export default UserService;
