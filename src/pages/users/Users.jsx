@@ -1,6 +1,7 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
 import UserList from "../../components/app/users/list/UserList";
+import "./users.scss";
 
 const Users = () => {
   return (
