@@ -5,7 +5,7 @@ import NotFound from "../../pages/not-Found/NotFound";
 import Home from "../../pages/home/Home";
 import About from "../../pages/about/About";
 import Contact from "../../pages/contact/Contact";
-import Layout from "../../pages/layout/Layout";
+import Layout from "../../pages/layOut/LayOut";
 import Flowers from "../../pages/flowers/Flowers";
 import Auth from "../../pages/auth/Auth";
 import { AddProduct } from "../../pages/AddProduct/AddProduct";
