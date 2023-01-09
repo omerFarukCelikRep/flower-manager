@@ -5,7 +5,7 @@ import NotFound from "../../pages/not-Found/NotFound";
 import Home from "../../pages/home/Home";
 import About from "../../pages/about/About";
 import Contact from "../../pages/contact/Contact";
-import Layout from "../../pages/layout/Layout";
+import Layout from "../../pages/layOut/LayOut";
 import Flowers from "../../pages/flowers/Flowers";
 import Auth from "../../pages/auth/Auth";
 import { AddProduct } from "../../pages/AddProduct/AddProduct";
@@ -21,8 +21,8 @@ const Routers = () => {
         <Route path="/" element={<Layout />}>
           <Route index path="/" element={<Home />} />
           <Route path="/About" element={<About />} />
-          <Route path="/flowers" element={<Flowers />} />
-          <Route path="/flowers/:id" component={ProductDetails} />
+          <Route path="/flowers/*" element={<Flowers />} />
+          {/* <Route path="/flowers/:id" component={<ProductDetails />} /> */}
           <Route path="/Contact" element={<Contact />} />
           <Route path="/AddProduct" element={<AddProduct />} />
           <Route path="users/*" element={<Users />} />

@@ -1,35 +1,52 @@
 import React, { useEffect, useState } from "react";
+import { useParams } from "react-router";
+import { history } from "../../../../helpers/HistoryHelper";
+import BlankPicture from "../../../../img/blank-profile-photo.jpeg";
+import ProductService from "../../../../services/ProductService";
 
+const UserDetails = () => {
+  const { id } = useParams();
 
-const ProductDetails = ({ match }) => {
-  const [flower, setFlower] = useState(null);
+  const [flower, setFlower] = useState({});
 
   useEffect(() => {
-    // Ürün ID'sini al
-    const id = match.params.id;
+    const getUser = async (id) => {
+      const result = await ProductService.getByIdAsync(id);
+      if (!result.isSuccess) {
+        history.navigate("/flowers");
+      }
+      setFlower(result.data);
+    };
 
-    // API isteğini oluştur ve ürün detaylarını al
-    fetch(`/flowers/${id}`)
-      .then((response) => response.json())
-      .then((flower) => setFlower(flower));
-  }, [match.params.id]);
+    getUser(id);
+  }, [id]);
 
-  if (!flower) {
-    return <p>Loading...</p>;
-  } else {
-    return (
-      <div className="content">
-        <img src={flower.image} alt="" />
-        <p>{flower.description}</p>
-        <p>
-          {flower.price} <span>TL</span>
-        </p>
-        <p>
-          {flower.stockCount} <span>Adet</span>
-        </p>
+  return (
+    <>
+      <div className="user-details-container">
+        <aside className="profile-image">
+          <img
+            src={flower.image }
+            alt={`${flower.name}`}
+          />
+        </aside>
+        <main className="details">
+          <div className="details-title">{`${flower.name}`}</div>
+          <div className="details-content">
+            <div className="content-group">
+              <label>Description</label>:<span>{flower.description}</span>
+            </div>
+            <div className="content-group">
+              <label>Price</label>:<span>{`${flower.price} TL`}</span>
+            </div>
+            <div className="content-group">
+              <label>Stock Count</label>:<span>{`${flower.stockCount} Adet`}</span>
+            </div>
+          </div>
+        </main>
       </div>
-    );
-  }
+    </>
+  );
 };
 
-export default ProductDetails;
+export default UserDetails;
