@@ -35,18 +35,29 @@ const FlowerList = () => {
     );
   };
 
+  const sortByName = () =>
+    setFilteredList([
+      ...flowers.sort((first, second) => first.name.localeCompare(second.name)),
+    ]);
+
+  const sortByNameDesc = () => {
+    setFilteredList([
+      ...flowers.sort((first, second) => second.name.localeCompare(first.name)),
+    ]);
+  };
+
   return (
     <>
       <div className="flower-list-container">
         <div className="flower-list-header">
           <div className="filters">
-            <button type="button" className="link">
+            <button type="button" className="link" onClick={sortByName}>
               Name{" "}
               <i>
                 <FontAwesomeIcon icon={faUpLong} />
               </i>
             </button>
-            <button type="button" className="link">
+            <button type="button" className="link" onClick={sortByNameDesc}>
               Name{" "}
               <i>
                 <FontAwesomeIcon icon={faDownLong} />
