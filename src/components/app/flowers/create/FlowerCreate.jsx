@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import { history } from "../../../../helpers/HistoryHelper";
 import FlowerService from "../../../../services/FlowerService";
 
@@ -145,7 +146,10 @@ const FlowerCreate = () => {
               <span className="validation">Image is not valid</span>
             )}
           </div>
-          <div className="form-group">
+          <div className="form-group" style={{ flexDirection: "row", columnGap:'50px' }}>
+            <Link to=".." relative="path" className="link">
+              Cancel
+            </Link>
             <button type="submit">Create</button>
           </div>
         </form>
