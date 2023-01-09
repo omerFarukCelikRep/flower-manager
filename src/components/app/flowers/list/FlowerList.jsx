@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import ProductService from "../../../../services/ProductService";
+import FlowerService from "../../../../services/FlowerService";
 import FlowerCard from "../card/FlowerCard";
 
 const FlowerList = ({ searching }) => {
@@ -7,7 +7,7 @@ const FlowerList = ({ searching }) => {
   const [error, setError] = useState("");
   useEffect(() => {
     const getAllFlowers = async () => {
-      const result = await ProductService.getAllAsync();
+      const result = await FlowerService.getAllAsync();
       !result.isSuccess && setError(result.message);
       setFlowers(result.data);
     };
@@ -29,17 +29,17 @@ const FlowerList = ({ searching }) => {
       </div>
     );
   } else {
-  return (
-    <>
-      <div className="flower-list-container">
-        {error && <p>{error}</p>}
-        {flowers.map((flower) => (
-          <FlowerCard flower={flower} key={flower.id} />
-        ))}
-      </div>
-    </>
-  );
-        }
+    return (
+      <>
+        <div className="flower-list-container">
+          {error && <p>{error}</p>}
+          {flowers.map((flower) => (
+            <FlowerCard flower={flower} key={flower.id} />
+          ))}
+        </div>
+      </>
+    );
+  }
 };
 
 export default FlowerList;
