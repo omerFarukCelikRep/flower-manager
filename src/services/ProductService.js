@@ -19,6 +19,27 @@ const getAllAsync = async () => {
   };
 };
 
+const getByIdAsync = async (id) => {
+  let res;
+  try {
+    res = await getAsync(`${endpoint}/${id}`);
+  } catch (error) {
+    res = error.response;
+  }
+  if (res.status > 199 && res.status < 300) {
+    return {
+      isSuccess: true,
+      data: res.data,
+    };
+  }
+
+  return {
+    isSuccess: false,
+    message: res.status,
+    data: {},
+  };
+};
+
 const addAsync = async (flower) => {
   console.log(flower);
   let lastId = await getLastIdAsync(endpoint);
@@ -37,6 +58,7 @@ const addAsync = async (flower) => {
 const ProductService = {
   addAsync,
   getAllAsync,
+  getByIdAsync
 };
 
 export default ProductService;
