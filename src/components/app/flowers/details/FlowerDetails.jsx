@@ -2,33 +2,30 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router";
 import { history } from "../../../../helpers/HistoryHelper";
 import BlankPicture from "../../../../img/blank-profile-photo.jpeg";
-import ProductService from "../../../../services/ProductService";
+import FlowerService from "../../../../services/FlowerService";
 
-const UserDetails = () => {
+const FlowerDetails = () => {
   const { id } = useParams();
 
   const [flower, setFlower] = useState({});
 
   useEffect(() => {
-    const getUser = async (id) => {
-      const result = await ProductService.getByIdAsync(id);
+    const getFlower = async (id) => {
+      const result = await FlowerService.getByIdAsync(id);
       if (!result.isSuccess) {
         history.navigate("/flowers");
       }
       setFlower(result.data);
     };
 
-    getUser(id);
+    getFlower(id);
   }, [id]);
 
   return (
     <>
       <div className="user-details-container">
         <aside className="profile-image">
-          <img
-            src={flower.image }
-            alt={`${flower.name}`}
-          />
+          <img src={flower.image ?? BlankPicture} alt={`${flower.name}`} />
         </aside>
         <main className="details">
           <div className="details-title">{`${flower.name}`}</div>
@@ -40,7 +37,8 @@ const UserDetails = () => {
               <label>Price</label>:<span>{`${flower.price} TL`}</span>
             </div>
             <div className="content-group">
-              <label>Stock Count</label>:<span>{`${flower.stockCount} Adet`}</span>
+              <label>Stock Count</label>:
+              <span>{`${flower.stockCount} Adet`}</span>
             </div>
           </div>
         </main>
@@ -49,4 +47,4 @@ const UserDetails = () => {
   );
 };
 
-export default UserDetails;
+export default FlowerDetails;
