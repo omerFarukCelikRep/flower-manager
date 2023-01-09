@@ -3,7 +3,7 @@ import FlowerList from "../../components/app/flowers/list/FlowerList";
 import { Link } from "react-router-dom";
 import "../flowers/flowers.scss";
 
-const Flowers = () => {
+const Flower = () => {
   const [searching, setSearching] = useState("");
   const [isFlowerLoading, setIsFlowerLoading] = useState(false);
 
@@ -29,4 +29,4 @@ const Flowers = () => {
     </>
   );
 };
-export default Flowers;
+export default Flower;

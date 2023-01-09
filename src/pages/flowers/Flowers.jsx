@@ -3,17 +3,18 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
 import ProductDetails from "../../components/app/flowers/ProductDetails/ProductDetails";
-import FlowerList from "../../components/app/flowers/list/FlowerList";
-
+import Flower from "./Flower";
 import "../flowers/flowers.scss";
 
 const Flowers = () => {
 
 
+
   return (
     <>
+   
       <Routes>
-        <Route index path="/" element={<FlowerList />} />
+        <Route index path="/" element={<Flower />} />
         <Route path=":id" element={<ProductDetails />} />
       </Routes>
     </>
