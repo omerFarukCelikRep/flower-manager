@@ -23,8 +23,8 @@ const FlowerDetails = () => {
 
   return (
     <>
-      <div className="user-details-container">
-        <aside className="profile-image">
+      <div className="flower-details-container">
+        <aside className="flower-image">
           <img src={flower.image ?? BlankPicture} alt={`${flower.name}`} />
         </aside>
         <main className="details">
