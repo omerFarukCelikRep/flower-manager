@@ -1,32 +1,21 @@
-import React, { useState} from "react";
 
+
+import React from "react";
+import { Route, Routes } from "react-router-dom";
+import ProductDetails from "../../components/app/flowers/ProductDetails/ProductDetails";
 import FlowerList from "../../components/app/flowers/list/FlowerList";
-import { Link } from "react-router-dom";
+
 import "../flowers/flowers.scss";
 
 const Flowers = () => {
-  const [searching, setSearching] = useState("");
-  const [isFlowerLoading, setIsFlowerLoading] = useState(false);
+
 
   return (
     <>
-      <p className="create-product">
-        <Link to="/AddProduct">
-          <span>Create Product</span>
-        </Link>
-      </p>
-      <input
-        className="search-bar"
-        type="search"
-        placeholder="Flower Name..."
-        onChange={(event) => setSearching(event.target.value)}
-        value={searching}
-      />
-      {isFlowerLoading ? (
-        <p>Loading...</p>
-      ) : (
-      <FlowerList  searching={searching}/>
-      )}
+      <Routes>
+        <Route index path="/" element={<FlowerList />} />
+        <Route path=":id" element={<ProductDetails />} />
+      </Routes>
     </>
   );
 };
