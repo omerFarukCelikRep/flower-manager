@@ -2,15 +2,13 @@
 
 - [Flower Manager App](#flower-manager-app)
   - [About](#about)
-  - [Technogies](#technogies)
+  - [Technologies](#technologies)
   - [Json-Server](#json-server)
   - [Auth](#auth)
     - [Register](#register)
       - [Register Request](#register-request)
-      - [Register Response](#register-response)
     - [Login](#login)
       - [Login Request](#login-request)
-      - [Login Response](#login-response)
 
 ---
 
@@ -20,13 +18,14 @@
 
 ---
 
-## Technogies
+## Technologies
 
 - React JS
 - Json Server
 - Sass
 - Axios
 - React Router
+- FontAwesome
 
 ---
 
@@ -62,22 +61,6 @@ POST {{host}}/register
 }
 ```
 
-#### Register Response
-
-```js
-200 OK
-```
-
-```json
-{
-    "id":"0ce92098-6459-4304-9134-cdd390bc0a76",
-   "firstName":"Ömer Faruk",
-    "lastName":"Çelik",
-    "email":"email@email.com",
-    "username":"ofaruk"
-}
-```
-
 ### Login
 
 ```js
@@ -90,21 +73,5 @@ POST {{host}}/login
 {
     "email":"email@email.com",
     "password":"pass123"
-}
-```
-
-#### Login Response
-
-```js
-200 OK
-```
-
-```json
-{
-    "id":"0ce92098-6459-4304-9134-cdd390bc0a76",
-     "firstName":"Ömer Faruk",
-    "lastName":"Çelik",
-    "email":"email@email.com",
-    "username":"ofaruk",
 }
 ```
