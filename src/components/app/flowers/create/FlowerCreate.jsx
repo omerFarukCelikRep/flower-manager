@@ -1,9 +1,12 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { useAuthContext } from "../../../../context/AuthProvider";
 import { history } from "../../../../helpers/HistoryHelper";
 import FlowerService from "../../../../services/FlowerService";
 
 const FlowerCreate = () => {
+  const { auth } = useAuthContext();
+
   const [flower, setFlower] = useState({
     name: "",
     description: "",
@@ -43,6 +46,7 @@ const FlowerCreate = () => {
       return;
     }
 
+    flower.userId = auth.id;
     const result = await FlowerService.addAsync(flower);
     if (!result.isSuccess) {
       setError(result.message);
@@ -146,7 +150,10 @@ const FlowerCreate = () => {
               <span className="validation">Image is not valid</span>
             )}
           </div>
-          <div className="form-group" style={{ flexDirection: "row", columnGap:'50px' }}>
+          <div
+            className="form-group"
+            style={{ flexDirection: "row", columnGap: "50px" }}
+          >
             <Link to=".." relative="path" className="link">
               Cancel
             </Link>
