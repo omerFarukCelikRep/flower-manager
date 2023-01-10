@@ -41,7 +41,6 @@ const getByIdAsync = async (id) => {
 };
 
 const addAsync = async (flower) => {
-  console.log(flower);
   let lastId = await getLastIdAsync(endpoint);
 
   flower.id = lastId + 1;
@@ -49,16 +48,24 @@ const addAsync = async (flower) => {
 
   const res = await postAsync(endpoint, flower);
   if (res.status > 199 && res.status < 300) {
-    return res.data;
+    return {
+      isSuccess: true,
+      message: res.statusText,
+      data: res.data,
+    };
   }
 
-  return {}; //TODO: Dönüş verisini düzelt
+  return {
+    isSuccess: false,
+    message: res.statusText,
+    data: {},
+  };
 };
 
-const ProductService = {
+const FlowerService = {
   addAsync,
   getAllAsync,
-  getByIdAsync
+  getByIdAsync,
 };
 
-export default ProductService;
+export default FlowerService;
