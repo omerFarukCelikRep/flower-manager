@@ -1,10 +1,10 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
-import "../flowers/flowers.scss";
 import FlowerList from "../../components/app/flowers/list/FlowerList";
 import FlowerDetails from "../../components/app/flowers/details/FlowerDetails";
 import FlowerCreate from "../../components/app/flowers/create/FlowerCreate";
 import RequireAuth from "../../components/routers/RequireAuth";
+import "../flowers/flowers.scss";
 
 const Flowers = () => {
   return (
