@@ -4,7 +4,7 @@ $background-color: #472183;
 $dark-color: #141414;
 $light-color: #f4f4f4;
 $danger-color: #ff0000;
-$link-color:#ff8c00;
+$link-color: #ff8c00;
 $main-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5);
 
 .text-light {
@@ -21,22 +21,38 @@ $main-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5);
 
 .route-link {
   margin: 15px 0 0;
-  display: inline-block;
   text-decoration: none;
   font-weight: 900;
   color: $dark-color;
   padding: 5px;
   border: 1px solid $dark-color;
   background-color: $light-color;
-  border-radius: 10%;
+  border-radius: 25px;
+  text-align: center;
+  cursor: pointer;
+
+  &:hover.danger {
+    background: $danger-color;
+    color: $primary-color;
+  }
+
+  &.primary {
+    background: $primary-color;
+    color: $dark-color;
+  }
+
+  &.secondary {
+    background: $link-color;
+    color: $dark-color;
+  }
 
   &:hover {
     background: $secondary-color;
-    color: $primary-color
+    color: $primary-color;
   }
 }
 
-.link{
+.link {
   display: inline-block;
   background-color: $link-color;
   text-decoration: none;
