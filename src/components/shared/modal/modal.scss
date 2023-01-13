@@ -1,0 +1,69 @@
+@import "../../../assets/styles/utilities.scss";
+
+.modal {
+  opacity: 0;
+  visibility: hidden;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba($color: $primary-color, $alpha: 0.4);
+  transition: 0.3s ease-in-out;
+
+  &.active {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  &-content {
+    width: 500px;
+    margin: 15% auto;
+    background-color: $secondary-color;
+    border-radius: 25px;
+    position: relative;
+    transition: inherit;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-100px);
+  }
+
+  &.active &-content {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+  &-header,
+  &-body {
+    border-bottom: 1px solid $dark-color;
+  }
+
+  &-header,
+  &-body,
+  &-footer {
+    padding: 20px 40px;
+  }
+
+  &-close {
+    position: absolute;
+    top: 16px;
+    right: 20px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: $dark-color;
+
+    &:hover {
+      color: $light-color;
+    }
+  }
+
+  &-footer {
+    padding-top: 0;
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+  }
+}
