@@ -1,6 +1,6 @@
 import ApiService from "./ApiService";
 
-const { getAsync, postAsync, getLastIdAsync } = ApiService;
+const { getAsync, postAsync, getLastIdAsync, putAsync } = ApiService;
 const endpoint = "/users";
 
 const getAllAsync = async () => {
@@ -60,11 +60,45 @@ const addAsync = async (user) => {
   return {}; //TODO: Dönüş verisini düzelt
 };
 
+const addToRoleAsync = async (id, ...roles) => {
+  try {
+    const res = await getAsync(`${endpoint}/${id}`);
+    if (res.status < 200 && res.status > 299) {
+      return {
+        isSuccess: false,
+        message: res.status,
+      };
+    }
+
+    const user = res.data;
+    user.roles = roles;
+
+    const putResponse = await putAsync(`${endpoint}/${id}`, user);
+    if (putResponse.status < 200 && putResponse.status > 299) {
+      return {
+        isSuccess: false,
+        message: putResponse.status,
+      };
+    }
+
+    return {
+      isSuccess: true,
+      data: user,
+    };
+  } catch (error) {
+    return {
+      isSuccess: false,
+      message: error.response.status,
+    };
+  }
+};
+
 const UserService = {
   getAllAsync,
   getByEmailAsync,
   addAsync,
   getByIdAsync,
+  addToRoleAsync,
 };
 
 export default UserService;
