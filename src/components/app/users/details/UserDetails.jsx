@@ -9,6 +9,7 @@ import Modal, {
   ModalFooter,
   ModalHeader,
 } from "../../../shared/modal/Modal";
+import UserRoles from "../roles/UserRoles";
 
 const UserDetails = () => {
   const { id } = useParams();
@@ -58,16 +59,19 @@ const UserDetails = () => {
               <h2>User Roles</h2>
             </ModalHeader>
             <ModalBody>
-              <p style={{ textAlign: "justify" }}>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad
-                itaque harum vero modi, aspernatur, esse veniam, eius velit quia
-                ea soluta! Laborum corporis iste dolores tempora minus nobis
-                laudantium officiis!
-              </p>
+              <UserRoles />
             </ModalBody>
             <ModalFooter>
-              <button type="button" className="route-link secondary" onClick={() => setShowModal(false)}>Close</button>
-              <button type="button" className="route-link primary">Add Role</button>
+              <button
+                type="button"
+                className="route-link secondary"
+                onClick={() => setShowModal(false)}
+              >
+                Close
+              </button>
+              <button type="button" className="route-link primary">
+                Add Role
+              </button>
             </ModalFooter>
           </Modal>
         </aside>
