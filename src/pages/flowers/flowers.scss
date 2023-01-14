@@ -94,9 +94,11 @@
     .filters,
     .search,
     .actions {
-      height: 90%;
+      min-height: 90%;
       display: flex;
       align-items: center;
+      gap:10px;
+      flex-wrap: wrap;
 
       button,
       a {

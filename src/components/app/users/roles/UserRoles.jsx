@@ -5,8 +5,8 @@ const UserRoles = () => {
   return (
     <>
       <div className="user-roles-container">
-        {roles.map((role) => (
-          <div className="check-group">
+        {roles.map((role, index) => (
+          <div className="check-group" key={index}>
             <input type="checkbox" />
             <span>{role}</span>
           </div>
