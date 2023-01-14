@@ -16,6 +16,7 @@ const UserDetails = () => {
 
   const [user, setUser] = useState({});
   const [showModal, setShowModal] = useState(false);
+  const [addedRoles, setAddedRoles] = useState([]);
 
   useEffect(() => {
     const getUser = async (id) => {
@@ -24,10 +25,32 @@ const UserDetails = () => {
         history.navigate("/users");
       }
       setUser(result.data);
+      setAddedRoles([...result.data.roles]);
     };
 
     getUser(id);
-  }, [id]);
+  }, [id, showModal]);
+
+  const handleChecboxChange = (e) => {
+    const { value, checked } = e.target;
+
+    if (checked) {
+      setAddedRoles((prevRoles) => [...new Set([...prevRoles, value])]);
+    } else {
+      setAddedRoles(addedRoles.filter((role) => role !== value));
+    }
+  };
+
+  const addToRole = async (e) => {
+    e.preventDefault();
+
+    const result = await UserService.addToRoleAsync(id, addedRoles);
+    if (!result.isSuccess) {
+      return;
+    }
+
+    setShowModal(false);
+  };
 
   return (
     <>
@@ -55,24 +78,29 @@ const UserDetails = () => {
             setShowModal={setShowModal}
             /*hideCloseButton*/
           >
-            <ModalHeader>
-              <h2>User Roles</h2>
-            </ModalHeader>
-            <ModalBody>
-              <UserRoles />
-            </ModalBody>
-            <ModalFooter>
-              <button
-                type="button"
-                className="route-link secondary"
-                onClick={() => setShowModal(false)}
-              >
-                Close
-              </button>
-              <button type="button" className="route-link primary">
-                Add Role
-              </button>
-            </ModalFooter>
+            <form onSubmit={addToRole}>
+              <ModalHeader>
+                <h2>User Roles</h2>
+              </ModalHeader>
+              <ModalBody>
+                <UserRoles
+                  userRoles={user.roles}
+                  handleChecboxChange={handleChecboxChange}
+                />
+              </ModalBody>
+              <ModalFooter>
+                <button
+                  type="button"
+                  className="route-link secondary"
+                  onClick={() => setShowModal(false)}
+                >
+                  Close
+                </button>
+                <button type="submit" className="route-link primary">
+                  Add Role
+                </button>
+              </ModalFooter>
+            </form>
           </Modal>
         </aside>
         <main className="details">
@@ -86,6 +114,9 @@ const UserDetails = () => {
             </div>
             <div className="content-group">
               <label>Date Of Birth</label>:<span>{user.dateOfBirth}</span>
+            </div>
+            <div className="content-group">
+              <label>Roles</label>:<span>{user.roles?.join(", ")}</span>
             </div>
           </div>
         </main>

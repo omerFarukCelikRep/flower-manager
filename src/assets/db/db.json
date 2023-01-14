@@ -18,6 +18,10 @@
       "username": "Similique fuga Maxi",
       "dateOfBirth": "1990-10-15",
       "password": "Pa$$w0rd!",
+      "roles": [
+        "Admin",
+        "Member"
+      ],
       "createdDate": "2022-12-30T16:02:22.421Z"
     },
     {
@@ -213,7 +217,7 @@
       "createdDate": "2023-01-06T22:54:58.268Z"
     }
   ],
-  "flowers": [ 
+  "flowers": [
     {
       "name": "Zephr Diaz",
       "description": "hfgjhfgj",
