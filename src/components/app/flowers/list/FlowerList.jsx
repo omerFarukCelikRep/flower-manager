@@ -38,14 +38,18 @@ const FlowerList = () => {
     );
   };
 
-  const sortByName = () =>
+  const sortByAsc = (prop) =>
     setFilteredList([
-      ...flowers.sort((first, second) => first.name.localeCompare(second.name)),
+      ...flowers.sort((first, second) =>
+        first[prop].localeCompare(second.name)
+      ),
     ]);
 
-  const sortByNameDesc = () => {
+  const sortByDesc = (prop) => {
     setFilteredList([
-      ...flowers.sort((first, second) => second.name.localeCompare(first.name)),
+      ...flowers.sort((first, second) =>
+        second[prop].localeCompare(first.name)
+      ),
     ]);
   };
 
@@ -54,14 +58,42 @@ const FlowerList = () => {
       <div className="flower-list-container">
         <div className="flower-list-header">
           <div className="filters">
-            <button type="button" className="link" onClick={sortByName}>
+            <button
+              type="button"
+              className="link"
+              onClick={() => sortByAsc("name")}
+            >
               Name{" "}
               <i>
                 <FontAwesomeIcon icon={faUpLong} />
               </i>
             </button>
-            <button type="button" className="link" onClick={sortByNameDesc}>
+            <button
+              type="button"
+              className="link"
+              onClick={() => sortByDesc("name")}
+            >
               Name{" "}
+              <i>
+                <FontAwesomeIcon icon={faDownLong} />
+              </i>
+            </button>
+            <button
+              type="button"
+              className="link"
+              onClick={() => sortByAsc("price")}
+            >
+              Price{" "}
+              <i>
+                <FontAwesomeIcon icon={faUpLong} />
+              </i>
+            </button>
+            <button
+              type="button"
+              className="link"
+              onClick={() => sortByDesc("price")}
+            >
+              Price{" "}
               <i>
                 <FontAwesomeIcon icon={faDownLong} />
               </i>

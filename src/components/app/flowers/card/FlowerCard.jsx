@@ -16,7 +16,7 @@ const FlowerCard = ({ flower }) => {
             <p>{flower.description}</p>
             <p>{flower.price} <span>TL</span></p>
             <p>{flower.stockCount} <span>Adet</span></p>
-            <Link to={`/flowers/${flower.id}`} className="route-link">Details</Link>
+            <Link to={`/flowers/${flower.id}`} className="route-link primary">Details</Link>
           </div>
         </div>
       </div>
