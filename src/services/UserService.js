@@ -60,7 +60,7 @@ const addAsync = async (user) => {
   return {}; //TODO: Dönüş verisini düzelt
 };
 
-const addToRoleAsync = async (id, ...roles) => {
+const addToRoleAsync = async (id, roles) => {
   try {
     const res = await getAsync(`${endpoint}/${id}`);
     if (res.status < 200 && res.status > 299) {
