@@ -15,7 +15,7 @@ const TrendList = () => {
 
       ArrayHelper.shuffleArray(result.data);
 
-      setFlowers(result.data.slice(0, 10));
+      setFlowers(result.data.slice(0, 5));
     };
 
     getAllFlowers();
