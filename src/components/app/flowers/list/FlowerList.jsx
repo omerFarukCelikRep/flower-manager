@@ -110,17 +110,15 @@ const FlowerList = () => {
 
           {auth ? (
             <>
-            <div className="actions">
-              <Link to="create" className="link">
-                Create
-              </Link>
-            </div>    
-            {/* <div className="actions">
-              <Link to="myFlowers" className="link">
-                Create
-              </Link>
-            </div>   */}
-            </>       
+              <div className="actions">
+                <Link to="myFlowers" className="link">
+                  MyFlowers
+                </Link>
+                <Link to="create" className="link">
+                  Create
+                </Link>
+              </div>
+            </>
           ) : (
             <></>
           )}
