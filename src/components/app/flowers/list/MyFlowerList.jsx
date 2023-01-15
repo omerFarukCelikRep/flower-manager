@@ -6,7 +6,7 @@ import FlowerService from "../../../../services/FlowerService";
 import FlowerCard from "../card/FlowerCard";
 import { useAuthContext } from "../../../../context/AuthProvider";
 
-const FlowerList = () => {
+const MyFlowerList = () => {
   const { auth } = useAuthContext();
 
   const [flowers, setFlowers] = useState([]);
@@ -18,14 +18,12 @@ const FlowerList = () => {
       const result = await FlowerService.getAllAsync();
       !result.isSuccess && setError(result.message);
       setFlowers(result.data);
-      setFilteredList(result.data.filter(flower => flower.userId === auth.id)); 
+      setFilteredList(
+        result.data.filter((flower) => flower.userId === auth.id)
+      );
     };
     getAllFlowers();
-  }, []);
-
-//   useEffect(() => {
-//     setFilteredList(flowers.filter(flower => flower.userid === auth.userid));
-//   }, [flowers, auth.userid]);
+  }, [auth]);
 
   const search = (searchText) => {
     if (!searchText) {
@@ -80,7 +78,7 @@ const FlowerList = () => {
 
           {auth ? (
             <div className="actions">
-              <Link to="create" className="link">
+              <Link to="../../create" className="link">
                 Create
               </Link>
             </div>
@@ -99,4 +97,4 @@ const FlowerList = () => {
   );
 };
 
-export default FlowerList;
+export default MyFlowerList;
