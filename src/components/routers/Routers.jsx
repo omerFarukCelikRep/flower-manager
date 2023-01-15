@@ -5,9 +5,8 @@ import NotFound from "../../pages/not-Found/NotFound";
 import Home from "../../pages/home/Home";
 import About from "../../pages/about/About";
 import Contact from "../../pages/contact/Contact";
-import Layout from "../../pages/layOut/LayOut";
+import Layout from "../../pages/layout/Layout";
 import Flowers from "../../pages/flowers/Flowers";
-// import MyFlower from "../../pages/myFlowers/MyFlower";
 import Auth from "../../pages/auth/Auth";
 import Users from "../../pages/users/Users";
 
