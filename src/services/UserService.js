@@ -50,6 +50,7 @@ const addAsync = async (user) => {
   let lastId = await getLastIdAsync(endpoint);
 
   user.id = lastId + 1;
+  user.roles = ["Member"];
   user.createdDate = new Date();
 
   const res = await postAsync(endpoint, user);
