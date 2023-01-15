@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import FlowerService from "../../../../services/FlowerService";
 import FlowerCard from "../card/FlowerCard";
 import { useAuthContext } from "../../../../context/AuthProvider";
+// import myFlowers from "../../pages/myFlowers/MyFlowers";
 
 const FlowerList = () => {
   const { auth } = useAuthContext();
@@ -108,11 +109,18 @@ const FlowerList = () => {
           </div>
 
           {auth ? (
+            <>
             <div className="actions">
               <Link to="create" className="link">
                 Create
               </Link>
-            </div>           
+            </div>    
+            {/* <div className="actions">
+              <Link to="myFlowers" className="link">
+                Create
+              </Link>
+            </div>   */}
+            </>       
           ) : (
             <></>
           )}
