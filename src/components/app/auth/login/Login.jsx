@@ -36,7 +36,11 @@ const Login = () => {
       return;
     }
 
-    setAuth({ id: result?.data?.id, email: result?.data?.email });
+    setAuth({
+      id: result?.data?.id,
+      email: result?.data?.email,
+      roles: result?.data?.roles,
+    });
     history.navigate("/");
   };
   return (
@@ -70,9 +74,13 @@ const Login = () => {
             />
             <span></span>
           </div>
-          <a href="#" className="link">
+          <Link
+            to=".."
+            className="route-link primary"
+            style={{ marginBottom: "10px" }}
+          >
             Forgot your password?
-          </a>
+          </Link>
           <div className="form-group">
             <button className="btn">Login</button>
           </div>
