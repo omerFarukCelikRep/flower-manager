@@ -1,7 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { useAuthContext } from "../../../context/AuthProvider";
 
 const Navbar = () => {
+  const { isAdmin } = useAuthContext();
   return (
     <>
       <nav className="navbar">
@@ -9,7 +11,7 @@ const Navbar = () => {
           <Link to="/">Home</Link>
           <Link to="/about">About</Link>
           <Link to="/flowers">Flowers</Link>
-          <Link to="/users">Users</Link>
+          {isAdmin ? <Link to="/users">Users</Link> : ""}
           <Link to="/contact">Contact</Link>
         </ul>
       </nav>
