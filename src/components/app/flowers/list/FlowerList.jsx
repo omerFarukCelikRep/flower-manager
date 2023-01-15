@@ -112,7 +112,7 @@ const FlowerList = () => {
               <Link to="create" className="link">
                 Create
               </Link>
-            </div>
+            </div>           
           ) : (
             <></>
           )}
