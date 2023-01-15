@@ -27,7 +27,7 @@ const TrendList = () => {
         <div className="title">Trend Products</div>
         <ul className="top-sales-details">
           {flowers.map((flower) => (
-            <li>
+            <li key={flower.id}>
               <Link to={`/flowers/${flower.id}`}>
                 <img src={flower.image} alt={flower.name} />
                 <span className="product">{flower.name}</span>
