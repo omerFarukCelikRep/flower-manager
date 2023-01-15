@@ -18,9 +18,8 @@ const FlowerList = () => {
       const result = await FlowerService.getAllAsync();
       !result.isSuccess && setError(result.message);
       setFlowers(result.data);
-      setFilteredList(result.data.filter(flower => flower.userid === auth.userid)); 
+      setFilteredList(result.data.filter(flower => flower.userId === auth.id)); 
     };
-
     getAllFlowers();
   }, []);
 
