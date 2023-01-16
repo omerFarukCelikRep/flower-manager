@@ -23,7 +23,6 @@ const Register = () => {
   });
 
   const [error, setError] = useState("");
-  const [success, setSuccess] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -44,7 +43,6 @@ const Register = () => {
         password: "",
         confirmedPassword: "",
       });
-      setSuccess(true);
       return;
     }
 

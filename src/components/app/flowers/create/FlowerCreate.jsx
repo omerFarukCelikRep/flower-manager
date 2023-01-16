@@ -66,19 +66,16 @@ const FlowerCreate = () => {
 
   return (
     <>
-      <section>
-        <h2>Create Product</h2>
+      <section className="flower-create-container">
+        <h2 className="form-title">Create</h2>
         {!error && <p>{error}</p>}
-        <form
-          id="product-form"
-          className="product-form"
-          onSubmit={handleSubmit}
-        >
+        <form id="product-form" className="form" onSubmit={handleSubmit}>
           <div className="form-group">
             <label htmlFor="flowerName">Flower Name</label>
             <input
               type="text"
               id="flowerName"
+              className="input"
               value={flower.name}
               onChange={(event) =>
                 setFlower((prevProduct) => ({
@@ -96,6 +93,7 @@ const FlowerCreate = () => {
             <input
               type="text"
               id="description"
+              className="input"
               value={flower.description}
               onChange={(event) =>
                 setFlower((prevProduct) => ({
@@ -113,6 +111,7 @@ const FlowerCreate = () => {
             <input
               type="number"
               id="description"
+              className="input"
               value={flower.price}
               onChange={(event) =>
                 setFlower((prevProduct) => ({
@@ -130,6 +129,7 @@ const FlowerCreate = () => {
             <input
               type="number"
               id="description"
+              className="input"
               value={flower.stockCount}
               onChange={(event) =>
                 setFlower((prevProduct) => ({
@@ -145,19 +145,23 @@ const FlowerCreate = () => {
           <div className="form-group">
             <label htmlFor="description">Image</label>
 
-            <input type="file" id="description" onChange={handleFileChange} />
+            <input
+              type="file"
+              id="description"
+              className="input"
+              onChange={handleFileChange}
+            />
             {!isValid.image && (
               <span className="validation">Image is not valid</span>
             )}
           </div>
-          <div
-            className="form-group"
-            style={{ flexDirection: "row", columnGap: "50px" }}
-          >
+          <div className="form-group" id="submit">
             <Link to=".." relative="path" className="link">
               Cancel
             </Link>
-            <button type="submit">Create</button>
+            <button type="submit" className="link">
+              Create
+            </button>
           </div>
         </form>
       </section>
