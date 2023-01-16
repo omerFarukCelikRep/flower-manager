@@ -1,13 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import Logo from "../../../img/flower-manager-logo-transparent.png";
 
 const Footer = () => {
   return (
     <footer className="footer">
       <div className="footer-content">
         <div className="footer-logo">
-          <img src="" alt="flower-manager-logo" />
-          <h2 className="text-light">Flower Manager</h2>
+          <img src={Logo} alt="flower-manager-logo" />
         </div>
         <div className="footer-text">
           <p className="text-light">

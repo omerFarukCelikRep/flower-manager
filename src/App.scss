@@ -27,6 +27,13 @@
   gap: 0 50px;
   z-index: 1000;
 
+  .app-logo{
+    height: inherit;
+    img{
+      height: inherit;
+    }
+  }
+
   .navbar ul {
     display: flex;
     list-style: none;
@@ -87,6 +94,14 @@
     align-content: center;
     align-items: center;
     justify-items: center;
+
+    .footer-logo{
+      height: inherit;
+
+      img{
+        height: inherit;
+      }
+    }
   }
 
   .footer-nav {

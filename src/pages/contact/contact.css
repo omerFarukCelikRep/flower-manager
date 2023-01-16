@@ -6,12 +6,6 @@
   display: flex;
   margin-top: 180px;
 }
-.footer-contact {
-  position: relative;
-  margin-left: 250px;
-  margin-top: 80px;
-  width: 500px;
-}
 
 .footer-contact h5 {
   padding-top: 50px;
