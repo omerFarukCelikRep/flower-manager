@@ -107,10 +107,10 @@ const FlowerCreate = () => {
             )}
           </div>
           <div className="form-group">
-            <label htmlFor="description">Price</label>
+            <label htmlFor="price">Price</label>
             <input
               type="number"
-              id="description"
+              id="price"
               className="input"
               value={flower.price}
               onChange={(event) =>
