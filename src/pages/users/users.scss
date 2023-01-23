@@ -3,7 +3,7 @@
 
 .user-details-container,
 .user-list-container,
-user-update-container {
+.user-update-container {
   background: url("../../img/flower-1.jpeg");
   background-attachment: fixed;
   background-repeat: no-repeat;
@@ -193,6 +193,63 @@ user-update-container {
           cursor: not-allowed;
         }
       }
+    }
+  }
+}
+
+.user-update-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .form-title {
+    font-size: 1.25rem;
+    margin: 0;
+    margin-bottom: 1.25rem;
+    text-transform: uppercase;
+  }
+
+  .form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 90%;
+
+    .form-group {
+      width: 70%;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      margin-block: 5px;
+
+      label {
+        text-transform: uppercase;
+      }
+
+      .validation {
+        color: #ff0000;
+      }
+
+      .input {
+        background-color: $light-color;
+        border: 0.01px solid $primary-color;
+        border-radius: 5px;
+        padding: 0.5rem;
+        margin: 0.5rem 0;
+        width: 100%;
+      }
+    }
+  }
+
+  #submit{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    justify-content: flex-end;
+
+    button {
+      height: 40px;
+      cursor: pointer;
     }
   }
 }
