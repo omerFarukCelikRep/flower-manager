@@ -6,6 +6,7 @@ import FlowerCreate from "../../components/app/flowers/create/FlowerCreate";
 import RequireAuth from "../../components/routers/RequireAuth";
 import MyFlower from "../myFlower/MyFlower";
 import "../flowers/flowers.scss";
+import FlowerUpdate from "../../components/app/flowers/update/FlowerUpdate";
 
 const Flowers = () => {
   return (
@@ -21,6 +22,7 @@ const Flowers = () => {
             </RequireAuth>
           }
         />
+        <Route path="update/:id" element={<FlowerUpdate />} />
         <Route
           path="myflowers/*"
           element={
