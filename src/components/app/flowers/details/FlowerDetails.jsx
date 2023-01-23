@@ -1,13 +1,16 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router";
+import { Link } from "react-router-dom";
 import { history } from "../../../../helpers/HistoryHelper";
 import BlankPicture from "../../../../img/blank-profile-photo.jpeg";
 import FlowerService from "../../../../services/FlowerService";
+import ConfirmModal from "../../../shared/confirmModal/ConfirmModal";
 
 const FlowerDetails = () => {
   const { id } = useParams();
 
   const [flower, setFlower] = useState({});
+  const [showConfirmModal, setShowConfirmModal] = useState(false);
 
   useEffect(() => {
     const getFlower = async (id) => {
@@ -21,11 +24,40 @@ const FlowerDetails = () => {
     getFlower(id);
   }, [id]);
 
+
+  const deleteFlower = async (e) => {
+    e.preventDefault();
+
+    const result = await FlowerService.deleteAsync(id);
+    if (!result.isSuccess) {
+      return;
+    }
+
+    setShowConfirmModal(false);
+    history.navigate("flowers");
+  };
+
   return (
     <>
       <div className="flower-details-container">
         <aside className="flower-image">
           <img src={flower.image ?? BlankPicture} alt={`${flower.name}`} />
+            <Link to={`../update/${id}`} className="route-link">
+              Update
+            </Link>
+            <button
+              className="route-link danger"
+              onClick={() => setShowConfirmModal(true)}
+            >
+              Delete
+            </button>
+            <ConfirmModal
+              title={"Delete"}
+              confirmText={"Are you sure?"}
+              showModal={showConfirmModal}
+              setShowModal={setShowConfirmModal}
+              confirm={deleteFlower}
+            />
         </aside>
         <main className="details">
           <div className="details-title">{`${flower.name}`}</div>
