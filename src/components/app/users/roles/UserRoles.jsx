@@ -11,7 +11,6 @@ const UserRoles = ({ userRoles, handleChecboxChange }) => {
               type="checkbox"
               value={role}
               defaultChecked={userRoles?.some((userRole) => userRole === role)}
-              // checked={userRoles?.some((userRole) => userRole === role)}
               onChange={handleChecboxChange}
             />
             <span>{role}</span>
