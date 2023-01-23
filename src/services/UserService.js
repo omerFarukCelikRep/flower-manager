@@ -123,7 +123,7 @@ const updateAsync = async (user) => {
 
     return {
       isSuccess: true,
-      data: user,
+      data: putResponse.data,
     };
   } catch (error) {
     return {

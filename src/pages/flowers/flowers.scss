@@ -5,7 +5,8 @@
 
 .flower-details-container,
 .flower-list-container,
-.flower-create-container {
+.flower-create-container,
+.flower-update-container {
   background: url("../../img/flower-1.jpeg");
   background-attachment: fixed;
   background-repeat: no-repeat;
@@ -61,7 +62,7 @@
     }
   }
 
-  #submit{
+  #submit {
     display: flex;
     flex-direction: row;
     gap: 20px;

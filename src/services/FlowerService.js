@@ -1,6 +1,7 @@
 import ApiService from "./ApiService";
 
-const { postAsync, getLastIdAsync, getAsync, putAsync } = ApiService;
+const { postAsync, getLastIdAsync, getAsync, putAsync, deleteAsync } =
+  ApiService;
 const endpoint = "/flowers";
 
 const getAllAsync = async () => {
@@ -99,11 +100,33 @@ const updateAsync = async (flower) => {
   }
 };
 
+const deleteFlowerAsync = async (id) => {
+  try {
+    const res = await deleteAsync(endpoint, id);
+    if (res.status < 200 && res.status > 299) {
+      return {
+        isSuccess: false,
+        message: res.status,
+      };
+    }
+
+    return {
+      isSuccess: true,
+    };
+  } catch (error) {
+    return {
+      isSuccess: false,
+      message: error.response.status,
+    };
+  }
+};
+
 const FlowerService = {
   addAsync,
   getAllAsync,
   getByIdAsync,
   updateAsync,
+  deleteAsync: deleteFlowerAsync,
 };
 
 export default FlowerService;
