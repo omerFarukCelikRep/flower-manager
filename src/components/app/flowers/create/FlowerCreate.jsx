@@ -143,11 +143,11 @@ const FlowerCreate = () => {
             )}
           </div>
           <div className="form-group">
-            <label htmlFor="description">Image</label>
+            <label htmlFor="image">Image</label>
 
             <input
               type="file"
-              id="description"
+              id="image"
               className="input"
               onChange={handleFileChange}
             />

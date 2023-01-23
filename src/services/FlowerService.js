@@ -1,6 +1,6 @@
 import ApiService from "./ApiService";
 
-const { postAsync, getLastIdAsync, getAsync } = ApiService;
+const { postAsync, getLastIdAsync, getAsync, putAsync } = ApiService;
 const endpoint = "/flowers";
 
 const getAllAsync = async () => {
@@ -62,10 +62,48 @@ const addAsync = async (flower) => {
   };
 };
 
+const updateAsync = async (flower) => {
+  try {
+    const res = await getAsync(`${endpoint}/${flower.id}`);
+    if (res.status < 200 && res.status > 299) {
+      return {
+        isSuccess: false,
+        message: res.status,
+      };
+    }
+
+    let foundFlower = res.data;
+    foundFlower = { ...flower };
+    foundFlower.modifiedDate = new Date();
+
+    const putResponse = await putAsync(
+      `${endpoint}/${foundFlower.id}`,
+      foundFlower
+    );
+    if (putResponse.status < 200 && putResponse.status > 299) {
+      return {
+        isSuccess: false,
+        message: putResponse.status,
+      };
+    }
+
+    return {
+      isSuccess: true,
+      data: putResponse.data,
+    };
+  } catch (error) {
+    return {
+      isSuccess: false,
+      message: error.response.status,
+    };
+  }
+};
+
 const FlowerService = {
   addAsync,
   getAllAsync,
   getByIdAsync,
+  updateAsync,
 };
 
 export default FlowerService;
