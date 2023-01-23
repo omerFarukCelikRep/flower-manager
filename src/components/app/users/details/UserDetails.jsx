@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { history } from "../../../../helpers/HistoryHelper";
 import BlankPicture from "../../../../img/blank-profile-photo.jpeg";
 import UserService from "../../../../services/UserService";
+import ConfirmModal from "../../../shared/confirmModal/ConfirmModal";
 import Loading from "../../../shared/loading/Loading";
 import Modal, {
   ModalBody,
@@ -17,6 +18,7 @@ const UserDetails = () => {
 
   const [user, setUser] = useState({});
   const [showModal, setShowModal] = useState(false);
+  const [showConfirmModal, setShowConfirmModal] = useState(false);
   const [addedRoles, setAddedRoles] = useState([]);
   const [loading, setLoading] = useState(false);
 
@@ -56,6 +58,19 @@ const UserDetails = () => {
     setShowModal(false);
   };
 
+  const deleteUser = async (e) => {
+    e.preventDefault();
+
+    const result = await UserService.deleteAsync(id);
+    if (!result.isSuccess) {
+      return;
+    }
+
+    setShowConfirmModal(false);
+
+    history.navigate("users");
+  };
+
   return (
     <>
       {loading ? (
@@ -77,9 +92,12 @@ const UserDetails = () => {
             <Link to={`../update/${id}`} className="route-link">
               Update
             </Link>
-            <Link to={`../delete/${id}`} className="route-link danger">
+            <button
+              className="route-link danger"
+              onClick={() => setShowConfirmModal(true)}
+            >
               Delete
-            </Link>
+            </button>
             <Modal
               show={showModal}
               setShowModal={setShowModal}
@@ -109,6 +127,13 @@ const UserDetails = () => {
                 </ModalFooter>
               </form>
             </Modal>
+            <ConfirmModal
+              title={"Delete"}
+              confirmText={"Are you sure?"}
+              showModal={showConfirmModal}
+              setShowModal={setShowConfirmModal}
+              confirm={deleteUser}
+            />
           </aside>
           <main className="details">
             <div className="details-title">{`${user.firstName} ${user.lastName}`}</div>

@@ -1,32 +1,19 @@
 {
   "users": [
     {
-      "id": 1,
-      "firstName": "İsim",
-      "lastName": "Soyisim",
-      "email": "email@email.com",
-      "password": "şifre",
-      "username": "kullanıcı adı",
-      "dateOfBirth": "01-01-2021",
-      "roles": [
-        "Member",
-        "Admin"
-      ],
-      "createdDate": "2022-12-30T16:02:54.955Z"
-    },
-    {
       "id": 2,
-      "firstName": "Dora",
-      "lastName": "Est deserunt similiq",
-      "email": "midol@mailinator.com",
-      "username": "Similique fuga Maxi",
-      "dateOfBirth": "1990-10-15",
+      "firstName": "Barbara",
+      "lastName": "Freeman",
+      "email": "musuwydiv@mailinator.com",
+      "username": "sykoqoni",
+      "dateOfBirth": "1972-11-09",
       "password": "Pa$$w0rd!",
       "roles": [
         "Admin",
         "Member"
       ],
-      "createdDate": "2022-12-30T16:02:22.421Z"
+      "createdDate": "2022-12-30T16:02:22.421Z",
+      "modifiedDate": "2023-01-23T17:50:04.840Z"
     },
     {
       "id": 3,
@@ -185,19 +172,6 @@
         "Member"
       ],
       "createdDate": "2023-01-01T22:43:28.634Z"
-    },
-    {
-      "firstName": "Colorado",
-      "lastName": "Duis dolores enim la",
-      "email": "zynymivi@mailinator.com",
-      "username": "Fugiat mollitia cul",
-      "dateOfBirth": "2021-05-20",
-      "password": "Pa$$w0rd!",
-      "id": 15,
-      "roles": [
-        "Member"
-      ],
-      "createdDate": "2023-01-01T22:44:04.347Z"
     },
     {
       "firstName": "Wayne",
