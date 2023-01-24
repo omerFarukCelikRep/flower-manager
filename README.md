@@ -34,7 +34,7 @@
 Json Server çalıştırmak için :
 
 ```console
-json-server --watch src\assets\db\db.json --port 4732 
+json-server --watch src\assets\db\db.json --port 4732 --delay 1000
 ```
 
 ---
