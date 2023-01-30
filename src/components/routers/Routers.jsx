@@ -9,6 +9,7 @@ import Layout from "../../pages/layout/Layout";
 import Flowers from "../../pages/flowers/Flowers";
 import Auth from "../../pages/auth/Auth";
 import Users from "../../pages/users/Users";
+import Unauthorized from "../../pages/unauthorized/Unauthorized";
 
 const Routers = () => {
   return (
@@ -24,6 +25,7 @@ const Routers = () => {
             <Route path="/register" element={<Auth />} />
             <Route path="/login" element={<Auth />} />
           </Route>
+          <Route path="unauthorized" element={<Unauthorized />} />
           <Route path="*" element={<NotFound />}></Route>
         </Route>
       </Routes>
